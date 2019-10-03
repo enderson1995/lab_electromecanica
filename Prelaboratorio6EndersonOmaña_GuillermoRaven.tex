@@ -1,0 +1,356 @@
+\documentclass[11pt,letterpaper]{article}     % Tipo de documento y otras especificaciones
+\usepackage[utf8]{inputenc}                   % Para escribir tildes y eñes
+\usepackage[spanish]{babel}                   % Para que los títulos de figuras, tablas y otros estén en español
+\usepackage[apaciteclassic]{apacite}
+\usepackage{geometry}    
+\usepackage{textcomp}
+\geometry{left=25mm, right=25mm, top=25mm, bottom=25mm} % Tamaño del área de escritura de la página
+\usepackage{amsmath}      % Los paquetes ams son desarrollados por la American Mathematical Society
+\usepackage{amsfonts}     % y mejoran la escritura de fórmulas y símbolos matemáticos.
+\usepackage{booktabs}
+\usepackage{subfig}
+\usepackage{amssymb}
+\usepackage{graphicx}     % Para insertar gráficas
+\usepackage{float}		% Para ubicar las tablas y figuras justo después del texto
+\usepackage{pdfpages}
+\batchmode
+\usepackage{enumerate}
+\usepackage{siunitx}
+\pagestyle{plain} 
+\usepackage{graphics}
+\pagenumbering{arabic}
+\usepackage{multicol}   % Para varias columnas
+\usepackage{multirow}
+\usepackage{color}%Paquete para colocar color al texto
+%====================Español Venezolano Rápido============================
+\renewcommand\tablename{Tabla}
+\renewcommand\figurename{Figura}
+%\renewcommand\prefacename{Prefacio}
+\renewcommand\refname{REFERENCIAS}
+%\renewcommand\bibname{REFERENCIAS}
+\renewcommand\abstractname{Resumen}
+%\renewcommand\chaptername{CAPÍTULO}
+\renewcommand\appendixname{Apéndice}
+\renewcommand\contentsname{ÍNDICE GENERAL}
+\renewcommand\listfigurename{LISTA DE FIGURAS}
+\renewcommand\listtablename{LISTA DE TABLAS}
+\renewcommand\indexname{Índice Alfabético}
+\renewcommand\partname{Parte}
+\graphicspath{ {RecursosLab5/} }
+%\renewcommand\enclname{Adjunto}
+%\renewcommand\ccname{Copia a}
+%\renewcommand\headtoname{A}
+%\renewcommand\pagename{Página}
+%\renewcommand\seename{véase}
+%\renewcommand\alsoname{véase también}
+%\renewcommand\proofname{Demostración}
+%\renewcommand\glossaryname{Glosario}
+%===================  Español venezolano =====================
+
+
+\author{\\Omaña Enderson CI:  24.757.361 \\Raven Guillermo CI: 25.476.227\\Profesor: Crespo Jorge \vspace*{1in}}
+\title{Universidad Central de Venezuela\\{ Facultad de Ingeniería\\Escuela de Ingeniería Eléctrica\\ Conversión Electromecánica de la energía\\\vspace*{1.5in} }Laboratorio 5\\TRANSFORMADOR MONOFÁSICO. COMPORTAMIENTO\vspace*{1.35in}}
+\date{Caracas, \today}
+
+\begin{document}	% Inicio del documento
+\maketitle							% Título
+\newpage
+\tableofcontents
+\newpage
+\section{Objetivos}
+\begin{itemize}
+	\item Trabajar con un elemento importante en los sistemas eléctricos.
+	\item Obtener la respuesta de la tensión secundaria del transformador para cargas lineales y no lineales con
+	tensión de alimentación constante.
+\end{itemize}
+\section{Marco Teórico}
+\subsection{Carga lineal}
+En el caso de una carga resistiva, referenciando los parámetros al secundario se tiene el siguiente diagrama fasorial:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{lab5/RecursosLab5/cargaResisVector.jpg}
+	\caption{Diagrama Fasorial para carga resistiva}
+	\label{fig:cargaresisvector}
+\end{figure}
+Por lo tanto, se observa que las ecuaciones que rigen su comportamiento serán:
+\begin{align}
+	\frac{Vp}{a}= (Vs+I2*Req) +j\cdot(Is*Xeq)\\
+	\left\|\frac{Vp}{a}\right\| = \sqrt{(Vs+I2*Req)^{2}+(Is*Xeq)^{2}}\\
+	\measuredangle \frac{Vp}{a} = \arctan\left(\frac{Is*Xeq}{Vs+I2*Req}\right)
+\end{align}
+Del diagrama fasorial presente en la figura \ref{fig:cargaresisvector} y las ecuaciones previas se pueden deducir 3 cosas: 
+\begin{enumerate}
+	\item La corriente se encuentra en fase con la tensión por lo tanto las curvas obtenidas en el osciloscopio deben estarlo.
+	\item La corriente varia dependiendo de la carga y esta afecta directamente a la tensión de alimentación en magnitud y fase.
+	\item Si la resistencia en la carga disminuye la corriente aumenta lo que hace que la tensión de alimentación aumente y el desfase es mayor, en cambio si la resistencia en la carga aumenta la corriente disminuye lo que hace que la tensión de alimentación disminuya y el desfase es menor.
+\end{enumerate}
+\section{Lista de instrumentos}
+\begin{table}[H]
+	\caption{Lista de instrumentos de medición y componentes}
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline 
+		Instrumento & Alcance ó especificaciones \\ \hline 
+		Reostato &  (0-33) $\Omega$ \\  
+		\hline 
+		Osciloscopio &  - \\ 
+		\hline 
+		Transformador &  2 KVA; 2:1 \\  
+		\hline 
+		Voltímetro de hierro móvil &  (0-150) V\\  
+		\hline 
+		Amperímetro de hierro móvil &(0-1.2) A ó (0-6) A \\ 
+		\hline
+		Vatímetro & -	\\
+		\hline
+		Protecciones AC & 25 A; 380 V\\ 
+		\hline
+		Protecciones DC & -\\ 
+		\hline
+		Carga inductiva& (Se utilizo un motor DC) \\ 
+		\hline
+		Carga resistiva-capacitiva& 33 $\Omega$; 300 $\mu F$ \\ 
+		\hline
+		Puente rectificador & -  \\
+		\hline
+		Carga lineal & (200,400,600,800,1K)W  \\
+		\hline
+		Variac & 7 KVA @ 50 A 
+		\\
+		\hline 
+	\end{tabular} 
+\end{table}
+\section{Condiciones de ensayo}
+Estas son las precauciones y normativas necesarias para realizar el laboratorio de forma segura y efectiva: 
+\begin{itemize}
+    \item \textbf{Respecto a la  vestimenta:} No usar franelas o camisas manga larga, llevar zapatos de goma y pantalones. No usar collares ni pulseras de metal.
+    \item \textbf{Previo a las pruebas:} Hacer primero el montaje antes de energizar, al culminarlo preguntar al profesor si las conexiones son correctas para proceder con las pruebas.
+    \item \textbf{Respecto a la comunicación:} Mantener informado sobre cualquier cambio en el montaje al compañero de laboratorio y por sobre todo informar si el circuito se encuentra energizado o no.
+    \item \textbf{Respecto al ambiente (COVENIN 3172-95):} El transformador debe estar ubicado en un sitio en el cual no tenga corrientes de aire ni fluctuaciones rápidas de la temperatura ambiente.
+	\item \textbf{Respecto a las curvas observadas:} No aceptar como adecuada una curva que este llena de ruido, ya que se puede deber a que algún elemento puede estar actuando como antena, esto originara imprecisión en los resultados.
+	\item \textbf{Respecto al numero de mediciones:}
+	Realizar al menos 4 mediciones para condiciones distintas.
+	\item \textbf{Respecto a la elección de componentes y las conexiones:} Evitar los componentes que puedan funcionar como antenas (como resistencias de shunt de tipo mariposa u algun otro que se encuentre muy expuesto) y cuidar los contactos de cada conexión.
+    \item \textbf{Respecto a la manipulación:} En caso de maniobrar el circuito energizado manipular con la mano derecha, buscando mayores probabilidades de sobrevivir en caso de un accidente eléctrico.
+\end{itemize}
+\section{Procedimiento}
+\subsection{Carga Lineal}
+\begin{enumerate}
+	\item Se armara el circuito propuesto en la figura \ref{diagramaLineal}.
+	\item Ajustar el reostato al 0\% (solo si es necesario), 25\%, 50\%, 75\% y 100\% de su capacidad y para cada estado realizar mediciones en tensión y corriente en la carga y en el primario, a su vez almacenar las imágenes que representen las señales respectivas. 
+\end{enumerate}
+\subsection{Carga No Lineal}
+\begin{enumerate}
+	\item Se conecta el circuito previsto en la figura \ref{DiagramaNoLineal} conectando una carga inductiva.
+	\item Se mide la potencia aparente y la potencia activa consumida por la carga.
+	\item Se observa la forma de onda de onda de corriente y tensión en la carga se almacenan las imagenes y se capturan las mismas imagenes pero para el primario.
+	\item Se cambia la carga a una capacitiva-resistiva y se realizan las mismas mediciones que en los pasos previos, pero se utiliza el circuito de la figura \ref{DiagramaNoLinealCapacitiva}.
+\end{enumerate}
+\section{Diagramas}
+\begin{figure}[H]
+    \centering
+    \includegraphics{lab5/RecursosLab5/ModeloAlta.jpg}
+    \caption{Modelo del transformador referenciado a alta}
+    \label{fig:ModeloTransformadorAlta}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics{lab5/RecursosLab5/ModeloBaja.jpg}
+    \caption{Modelo del transformador referenciado a naja}
+    \label{fig:ModeloTransformadorBaja}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{lab5/RecursosLab5/CargaResistiva.jpg}
+    \caption{Diagrama de conexión con carga líneal}
+    \label{diagramaLineal}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{lab5/RecursosLab5/CargaInductiva.jpg}
+    \caption{Diagrama de conexión con carga no lineal inductiva}
+    \label{DiagramaNoLineal}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{lab5/RecursosLab5/CargaCapcitivaResistiva.jpg}
+    \caption{Diagrama circuital resistiva capacitiva}
+    \label{DiagramaNoLinealCapacitiva}
+\end{figure}
+\section{Resultados experimentales}
+\subsection{Carga lineal}
+\subsubsection{Condición en vació}
+Se fijo la tensión en el lado de baja (120 $\pm$ 1) V con una corriente de (2.3 $\pm$ 0.1) A; además se obtuvo la forma de onda de la corriente en vació del lado de baja en la Figura \ref{ShuntEnVacio}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.2]{lab5/RecursosLab5/shuntEnVacio.jpeg}
+    \caption{Corriente en lado de baja. Escala 10 mV y 2 ms }
+    \label{ShuntEnVacio}
+\end{figure}
+\subsubsection{Mediciones en RMS y valores calculados}
+En la siguiente figura se aprecian los valores obtenidos por medio de  voltímetros, amperímetros y un vatimetro:
+\begin{table}[H]
+\centering
+\caption{Mediciones en lado de alta y baja para diversas cargas resistivas}
+\label{experiencia1}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\textbf{Carga lineal {[}W{]}} & \textbf{$V_{entrada}$ {[}V{]}} & \textbf{$V_{salida}$ {[}V{]}} & \textbf{$I_{entrada}$ {[}A{]}} & \textbf{$I_{salida}$ {[}A{]}} & \textbf{$P_{salida}$ {[}W{]}} \\ \hline
+200                           & 120$\pm$1                      & 230$\pm$2                     & 2,9$\pm$0,1                    & 1,01$\pm$0,05                 & 220$\pm$10                    \\ \hline
+400                           & 118$\pm$1                      & 224$\pm$2                     & 4,3$\pm$0,1                    & 1,90$\pm$0,05                 & 410$\pm$10                    \\ \hline
+600                           & 118$\pm$1                      & 224$\pm$2                     & 5,9$\pm$0,1                    & 2,55$\pm$0,05                 & 620$\pm$10                    \\ \hline
+800                           & 112$\pm$1                      & 220$\pm$2                     & 7,5$\pm$0,1                    & 3,60$\pm$0,05                 & 790$\pm$10                    \\ \hline
+1000                          & 110$\pm$1                      & 218$\pm$2                     & 9,0$\pm$0,1                    & 4,40$\pm$0,05                 & 950$\pm$10                    \\ \hline
+\end{tabular}
+\end{table}
+Utilizando los resultados previos, extrayendo $R_{cc}$ y $X_{cc}$ del modelo obtenido en la practica previa se obtiene la tensión $\frac{V_{p}}{a}$ cuya expresión del error es la siguiente:
+\begin{equation}
+    Copia la formula de la incertidumbre
+\end{equation}
+Con $\frac{V_{p}}{a}$ y la tensión en el secundario se obtiene la regulación por medio de las siguientes formulas:
+\begin{align}
+    Reg = \frac{\frac{V_{p}}{a}-V_{salida}}{V_{salida}}\\
+    \Delta Reg = Copia la formula del error
+\end{align}
+Con las expresiones previas se obtuvo el siguiente cuadro:
+\begin{table}[H]
+\centering
+\caption{Regulación respecto a la carga lineal}
+\label{Regcuadro}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{$\frac{V_{p}}{a}$ {[}V{]}} & \textbf{Regulación} & \textbf{Carga lineal {[}W{]}} \\ \hline
+                                   &                     & 220 $\pm$ 10                  \\ \hline
+                                   &                     & 410 $\pm$ 10                  \\ \hline
+                                   &                     & 620$\pm$10                    \\ \hline
+                                   &                     & 790$\pm$10                    \\ \hline
+                                   &                     & 950$\pm$10                    \\ \hline
+\end{tabular}
+\end{table}
+Con los valores de regulación obtenidos y la corriente en el lado de alta se comparo con su homologo teórico en la siguiente gráfica:
+%Pon la grafica por favor calacula todo lo anterior para mis valores de modelo tambien mi Rcc es 1,43$\pm$0,02 y Xcc=0,87$\pm$0,03
+\subsubsection{Corrientes en alta y baja para distintas cargas}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntBaja200W.jpeg}
+    \caption{Corriente en baja para carga de 200 W. Escalas 10 mV y 2 ms}
+    \label{shuntBaja200W}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntAlta200W.jpeg}
+    \caption{Corriente en alta para carga de 200 W. Escalas 10 mV y 2 ms}
+    \label{shuntAlta200W}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntBaja400W.jpeg}
+    \caption{Corriente en baja para carga de 200 W. Escalas 10 mV y 2 ms}
+    \label{shuntBaja400W}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntAlta400W.jpeg}
+    \caption{Corriente en alta para carga de 400 W. Escalas 10 mV y 2 ms}
+    \label{shuntAlta400W}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntBaja600W.jpeg}
+    \caption{Corriente en baja para carga de 600 W. Escalas 20 mV y 2 ms}
+    \label{shuntBaja600W}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntAlta600W.jpeg}
+    \caption{Corriente en alta para carga de 600 W. Escalas 20 mV y 2 ms}
+    \label{shuntAlta600W}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntBaja800W.jpeg}
+    \caption{Corriente en baja para carga de 800 W. Escalas 20 mV y 2 ms}
+    \label{shuntBaja800W}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntAlta800W.jpeg}
+    \caption{Corriente en alta para carga de 800 W. Escalas 20 mV y 2 ms}
+    \label{shuntAlta800W}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntBaja1kW.jpeg}
+    \caption{Corriente en baja para carga de 1 KW. Escalas 20 mV y 2 ms}
+    \label{shuntBaja1KW}
+\end{figure}
+\subsection{Carga no lineal}
+Se calcula la potencia aparente de la carga por medio de las siguientes expresiones:
+\begin{align}
+    S = I\cdot V\\
+    \Delta S = V\Delta I + I\Delta V
+\end{align}
+El factor de potencia:
+\begin{align}
+    fp = \frac{P(salida)}{S} \\
+    \Delta fp = \frac{\Delta P(salida) }{S} + \frac{P(salida)\cdot \Delta S}{S^{2}}
+\end{align}
+De acuerdo a las mediciones y las expresiones previas se obtiene el siguiente cuadro:
+\begin{table}[H]
+\centering
+\caption{Valores obtenidos para cargas no lineales}
+\label{ValoresCNL}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\textbf{$V_{entrada}$ {[}V{]}} & \textbf{$V_{salida}$ {[}V{]}} & \textbf{$I_{entrada}$ {[}A{]}} & \textbf{$I_{salida}$ {[}A{]}} & \textbf{P (salida) {[}W{]}} & \textbf{Carga} \\ \hline
+28$\pm$1                       & 54$\pm$2                      & 3,0$\pm$0,1                    & 1,55$\pm$0,05                 & 70 $\pm$ 10                 & Inductiva      \\ \hline
+28$\pm$1                       & 53$\pm$1                      & 3,5$\pm$0,1                    & 1,80$\pm$0,05                 & 80 $\pm$ 10                 & Capacitiva     \\ \hline
+\multicolumn{3}{|c|}{\textbf{S {[}VA{]}}}                                                       & \multicolumn{3}{c|}{\textbf{fp}}                                             \\ \hline
+Inductiva                      & \multicolumn{2}{c|}{Llenar 1}                                  & Inductiva                     & \multicolumn{2}{c|}{Llenar 3}                \\ \hline
+Capacitiva                     & \multicolumn{2}{c|}{Llenar 2}                                  & Capacitiva                    & \multicolumn{2}{c|}{Llenar 4}                \\ \hline
+\end{tabular}
+\end{table}
+Se obtuvieron las siguientes curvas para ambas cargas:
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntInductiva.jpeg}
+    \caption{Corriente en baja para carga inductiva. Escala 5 mV y 2 ms}
+    \label{shuntInductiva}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntResisCapacitiva.jpeg}
+    \caption{Corriente en baja para carga resistiva capacitiva. Escala 5 mV y 2 ms}
+    \label{shuntResisCapacitiva}
+\end{figure}
+\section{Resultados Teóricos}
+Utilizando el modelo del transformador del diagrama \ref{fig:ModeloTransformadorAlta}, se obtuvo de forma teórica para cargas de (200, 400, 600, 800, 1000) W el siguiente cuadro:
+\begin{table}[H]
+\centering
+\caption{Regulación respecto a la carga lineal}
+\label{RegcuadroTEORICO}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{$\frac{V_{p}}{a}$ {[}V{]}} & \textbf{Regulación} & \textbf{Carga lineal {[}W{]}}  & \textbf{I(carga) {[}A{]}} \\ \hline
+                                   &                     & 200    &             \\ \hline
+                                   &                     & 400    &             \\ \hline
+                                   &                     & 600      &              \\ \hline
+                                   &                     & 800    &                \\ \hline
+                                   &                     & 1000   &                \\ \hline
+\end{tabular}
+\end{table}
+\section{Análisis de resultados}
+\section{Conclusión}
+\newpage
+\section{Anexos}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7, angle=-90]{lab5/RecursosLab5/hojaDeDatos1.jpeg}
+    \caption{Hoja de datos 1}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7, angle=-90]{lab5/RecursosLab5/hojaDeDatos2.jpeg}
+    \caption{Hoja de datos 2}
+\end{figure}
+\end{document}
