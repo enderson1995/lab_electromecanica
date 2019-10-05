@@ -49,7 +49,7 @@
 
 
 \author{\\Omaña Enderson CI:  24.757.361 \\Raven Guillermo CI: 25.476.227\\Profesor: Crespo Jorge \vspace*{1in}}
-\title{Universidad Central de Venezuela\\{ Facultad de Ingeniería\\Escuela de Ingeniería Eléctrica\\ Conversión Electromecánica de la energía\\\vspace*{1.5in} }Laboratorio 5\\TRANSFORMADOR MONOFÁSICO. COMPORTAMIENTO\vspace*{1.35in}}
+\title{Universidad Central de Venezuela\\{ Facultad de Ingeniería\\Escuela de Ingeniería Eléctrica\\ Conversión Electromecánica de la energía\\\vspace*{1.5in} }Laboratorio 6\\MAQUINAS DE CORRIENTE CONTINUA\vspace*{1.35in}}
 \date{Caracas, \today}
 
 \begin{document}	% Inicio del documento
@@ -59,31 +59,40 @@
 \newpage
 \section{Objetivos}
 \begin{itemize}
-	\item Trabajar con un elemento importante en los sistemas eléctricos.
-	\item Obtener la respuesta de la tensión secundaria del transformador para cargas lineales y no lineales con
-	tensión de alimentación constante.
+	\item Estudiar los diferentes tipos de motores de corriente continua y sus
+    aplicaciones en la industria.
+	\item Modelar en régimen permanente una máquina de corriente continua.
+	\item Determinar las curvas características más importantes de las máquinas de
+    corriente continua.
+    \item Estudiar los problemas asociados a la conmutación de una máquina de
+    corriente continua.
 \end{itemize}
 \section{Marco Teórico}
-\subsection{Carga lineal}
-En el caso de una carga resistiva, referenciando los parámetros al secundario se tiene el siguiente diagrama fasorial:
+\subsection{Curva de saturación o vacio}
+En las máquinas de corriente continua, la curva de saturación o magnetización
+B=f(H) representa la característica interna de su circuito magnético y de sus
+bobinas. Para la medición de esta característica no se mide la inducción B en
+función del campo magnético H, sino dos cantidades eléctricas proporcionales a
+éstas: la fuerza electromotriz generada en vacío, $E_{0}$ contra la corriente del campo principal de excitación $I_{exc}$, obteniéndose así lo que se conoce como la curva de vacío (durante el ensayo la máquina esta sin carga o en vacío) o de saturación (en la curva se visualiza el codo de saturación del circuito magnético de la máquina).
+
+Es conocido que una máquina de p pares de polos, 2a vías en paralelo, y n
+conductores; que gira a la velocidad w, genera una fuerza electromotriz E0, igual
+a:
+\begin{equation}
+    Eo = k\cdot \phi \cdot w
+\end{equation}
+Si se hace girar la máquina a velocidad constante, a través de cualquier
+mecanismo externo (ej.: turbina, o en el laboratorio un motor sincrónico), la fuerza electromotriz es directamente proporcional al flujo $\phi$, que a su vez es proporcional a la densidad de flujo magnético (inducción) B. Luego para producir dicho flujo $\phi$, es necesario aplicar un campo magnético H, a través del circuito de excitación. El teorema de Ampère relaciona directamente el campo H a los amperios-vueltas magnetizantes del(os) circuito(s) de excitación, donde el campo H es proporcional a la fuerza magnetomotríz total aplicada.
+
+De esta forma determinando la curva de saturación o vacío, a través de
+mediciones de la tensión en los terminales de la armadura sin carga $U_{0}$
+(aproximadamente igual a $E_{0}$) para diferentes valores de corriente de excitación $I_{exc}$, a velocidad de giro w constante, se obtiene una imagen de la curva de magnetización B=f(H).
 \begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{lab5/RecursosLab5/cargaResisVector.jpg}
-	\caption{Diagrama Fasorial para carga resistiva}
-	\label{fig:cargaresisvector}
+    \centering
+    \includegraphics[scale=0.5]{/recursos-Lab6/curvaDeVacioTeo.jpg}
+    \caption{Curva de magnetización}
+    \label{fig:curvaDeVacioTeo}
 \end{figure}
-Por lo tanto, se observa que las ecuaciones que rigen su comportamiento serán:
-\begin{align}
-	\frac{Vp}{a}= (Vs+I2*Req) +j\cdot(Is*Xeq)\\
-	\left\|\frac{Vp}{a}\right\| = \sqrt{(Vs+I2*Req)^{2}+(Is*Xeq)^{2}}\\
-	\measuredangle \frac{Vp}{a} = \arctan\left(\frac{Is*Xeq}{Vs+I2*Req}\right)
-\end{align}
-Del diagrama fasorial presente en la figura \ref{fig:cargaresisvector} y las ecuaciones previas se pueden deducir 3 cosas: 
-\begin{enumerate}
-	\item La corriente se encuentra en fase con la tensión por lo tanto las curvas obtenidas en el osciloscopio deben estarlo.
-	\item La corriente varia dependiendo de la carga y esta afecta directamente a la tensión de alimentación en magnitud y fase.
-	\item Si la resistencia en la carga disminuye la corriente aumenta lo que hace que la tensión de alimentación aumente y el desfase es mayor, en cambio si la resistencia en la carga aumenta la corriente disminuye lo que hace que la tensión de alimentación disminuya y el desfase es menor.
-\end{enumerate}
 \section{Lista de instrumentos}
 \begin{table}[H]
 	\caption{Lista de instrumentos de medición y componentes}
@@ -91,7 +100,7 @@ Del diagrama fasorial presente en la figura \ref{fig:cargaresisvector} y las ecu
 	\begin{tabular}{|c|c|}
 		\hline 
 		Instrumento & Alcance ó especificaciones \\ \hline 
-		Reostato &  (0-33) $\Omega$ \\  
+		Reostato &  (0-100) $\Omega$ \\  
 		\hline 
 		Osciloscopio &  - \\ 
 		\hline 
@@ -134,49 +143,40 @@ Estas son las precauciones y normativas necesarias para realizar el laboratorio 
     \item \textbf{Respecto a la manipulación:} En caso de maniobrar el circuito energizado manipular con la mano derecha, buscando mayores probabilidades de sobrevivir en caso de un accidente eléctrico.
 \end{itemize}
 \section{Procedimiento}
-\subsection{Carga Lineal}
+\subsection{Características internas}
 \begin{enumerate}
-	\item Se armara el circuito propuesto en la figura \ref{diagramaLineal}.
-	\item Ajustar el reostato al 0\% (solo si es necesario), 25\%, 50\%, 75\% y 100\% de su capacidad y para cada estado realizar mediciones en tensión y corriente en la carga y en el primario, a su vez almacenar las imágenes que representen las señales respectivas. 
-\end{enumerate}
-\subsection{Carga No Lineal}
-\begin{enumerate}
-	\item Se conecta el circuito previsto en la figura \ref{DiagramaNoLineal} conectando una carga inductiva.
-	\item Se mide la potencia aparente y la potencia activa consumida por la carga.
-	\item Se observa la forma de onda de onda de corriente y tensión en la carga se almacenan las imagenes y se capturan las mismas imagenes pero para el primario.
-	\item Se cambia la carga a una capacitiva-resistiva y se realizan las mismas mediciones que en los pasos previos, pero se utiliza el circuito de la figura \ref{DiagramaNoLinealCapacitiva}.
+    \item Lo primero sera, hallar las resistencias internas de campo y armadura por lo que se realizaran las conexiones como en la figura \ref{fig:diagConexionesMedRes}.
+    \item Se conectara unicamente el lado de campo con una fuente DC al valor nominal.
+    \item Manteniendo la tensión Vf fija y variando el reostato en pasos equidistantes se tomara nota de los valores de tensión y corriente. Se tomaran al menos 4 mediciones.
+    \item Se desconectara la alimentación del lado de campo y se conectara la fuente del lado de armadura a tensión nominal.
+    \item Manteniendo la tensión Va fija y desplazando la cuchilla de arranque en pasos equidistantes se tomara nota de los valores de tensión en los bornes y la tensión en la resistencia de shunt. Se tomaran al menos 6 mediciones.
+    \item Se desconectara la alimentación del lado de armadura y se desenergizara el circuito.
+    \item Se armara el esquema de conexiones conectando el motor DC como generador de acuerdo a la figura \ref{fig:diagConexionesMedCurvaSat}.
+    \item Se encendera el generador sincronico y solo cuando alcance una velocidad constante se accionara el campo mediante las protecciones DC.
+    \item Manteniendo la velocidad del eje a su valor nominal se variara el reostato del lado de campo de forma que los datos sean tomados en espacios apropiados que permitirán una exactitud de la curva graficada entre nula excitación y 125\% de la tensión nominal ($U_{nom}$), en la parte lineal de la curva con incrementos de 20\% de $U_{nom}$ y pasos del 10\% de $U_{nom}$,
+    alrededor del codo de saturación que suele estar entre el 80\% y el 110\% de la $U_{nom}$.  
+    \item Se repetira el proceso del punto previo; pero desde el ultimo punto alcanzado hasta el valor minimo, respetando en lo posible que los pasos sean iguales.
 \end{enumerate}
 \section{Diagramas}
+
+\section{Calculos preliminares}
+\subsection{Características internas}
+\subsubsection{Resistencia interna }
+De acuerdo al diagrama de la figura \ref{fig:diagramaMedRes},  se espera una curva característica de tensión vs corriente para el lado de campo con una forma similar al de la figura \ref{fig:curvaCaractPreVILadoCampo} y en el lado de armadura su forma se asemejara a la figura \ref{fig:curvaCaractPreVILadoArmadura}.
 \begin{figure}[H]
     \centering
-    \includegraphics{lab5/RecursosLab5/ModeloAlta.jpg}
-    \caption{Modelo del transformador referenciado a alta}
-    \label{fig:ModeloTransformadorAlta}
+    \includegraphics[scale=0.5]{/recursos-Lab6/curvaCaractPreVILadoCampo.jpg}
+    \caption{Curva característica esperada V vs If}
+    \label{fig:curvaCaractPreVILadoCampo}
 \end{figure}
+La pendiente de la curva previa proporcionara el valor de la resistencia de campo.
 \begin{figure}[H]
     \centering
-    \includegraphics{lab5/RecursosLab5/ModeloBaja.jpg}
-    \caption{Modelo del transformador referenciado a naja}
-    \label{fig:ModeloTransformadorBaja}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.7]{lab5/RecursosLab5/CargaResistiva.jpg}
-    \caption{Diagrama de conexión con carga líneal}
-    \label{diagramaLineal}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.7]{lab5/RecursosLab5/CargaInductiva.jpg}
-    \caption{Diagrama de conexión con carga no lineal inductiva}
-    \label{DiagramaNoLineal}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.7]{lab5/RecursosLab5/CargaCapcitivaResistiva.jpg}
-    \caption{Diagrama circuital resistiva capacitiva}
-    \label{DiagramaNoLinealCapacitiva}
-\end{figure}
+    \includegraphics[scale=0.5]{/recursos-Lab6/curvaCaractPreVILadoArmadura.jpg}
+    \caption{Curva característica esperada V vs Ia}
+    \label{fig:curvaCaractPreVILadoArmadura}
+\end{figure} 
+Como se puede observar en la figura \ref{fig:curvaCaractPreVILadoArmadura} a diferencia de la figura \ref{fig:curvaCaractPreVILadoCampo} no es una recta completamente. Al inicio de la curva se espera un comportamiento no lineal debido a la resistencia de las escobillas; Aunque desde cierto punto se vuelve lineal debido a que el ya mencionado efecto es despreciable, por lo que la pendiente de la zona lineal corresponde con el valor de la resistencia de armadura. 
 \section{Resultados experimentales}
 \subsection{Carga lineal}
 \subsubsection{Condición en vació}
