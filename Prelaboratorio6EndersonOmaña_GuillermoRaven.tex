@@ -147,7 +147,7 @@ Estas son las precauciones y normativas necesarias para realizar el laboratorio 
 \begin{enumerate}
     \item Se realiza la conexión de la fig \ref{fig:diagGeneradorIndependiente} de generador independiente.
     \item Una vez conectado todo el circuito con el motor que funciona como generador, empleando el tacometro se verifica velocidad nominal en el generador.
-    \item Se ajusta $U$ inicalmente sin carga hasta alcanzar $U_{nom}$ con $I_{ext}$, una vez alcanzado $U_{nom}$ se registra el valor.
+    \item Se ajusta $U$ inicialmente sin carga hasta alcanzar $U_{nom}$ con $I_{ext}$, una vez alcanzado $U_{nom}$ se registra el valor.
     \item Se conecta carga al sistema, generando un cambio en los valores de $U$ e $I_a$.
     \item Se ajusta $U$ con $I_{ext}$ hasta alcanzar valores nominales. Se registra el valor de $I_{ext}$ e $I_a$.
     \item Se varía la carga y se repite hasta llegar a valores nominales.
@@ -160,18 +160,29 @@ Estas son las precauciones y normativas necesarias para realizar el laboratorio 
     \item Se agrega carga al generador, se verifica que $I_{ext}$ se mantenga constante en caso contrario se ajusta con $R_p$.
     \item Al verificar los valores constante se toman las medidas de $U$ e $I_a$ se varia la carga y se repite el paso 3 y 4.
     \item Al tener los datos registrados se realiza la curva característica de regulación
-    \item Se ajusta $U$ inicalmente sin carga hasta alcanzar $U_{nom}$ con $I_{ext}$, una vez alcanzado $U_{nom}$ se registra el valor.
+    \item Se ajusta $U$ inicialmente sin carga hasta alcanzar $U_{nom}$ con $I_{ext}$, una vez alcanzado $U_{nom}$ se registra el valor.
     \item Se conecta carga al sistema, generando un cambio en los valores de $U$ e $I_a$.
     \item Se ajusta $U$ con $I_{ext}$ hasta alcanzar valores nominales. Se registra el valor de $I_{ext}$ e $I_a$.
     \item Se varía la carga y se repite hasta llegar a valores nominales.
     \item Una vez registrado el ultimo valor se verifica que se encuentre en $U_{nom}$ e $I_{anom}$ en caso que sean diferentes se ajustarán a valores nominales, una vez verificado se desconectará la carga de forma gradual hasta retirarla completamente, luego se registra e valor de $U$ sin carga. 
 \end{enumerate}
 \subsection{Motor independiente}
+\subsubsection{Curva de velocidad en función de la corriente de armadura}
 \begin{enumerate}
     \item Se realiza la conexión de la fig \ref{fig:diagMotorIndependiente} de motor independiente.
     \item Se realiza la medición de la curva electromecánica de velocidad manteniendo Uc constante e $I_{ext}$ constante.
     \item Se anotan las mediciones de $I_a$ y de la velocidad.
     \item Se varia Rs variando directamente $I_a$ se anota los valores y se repite hasta hacer varias mediciones.
+\end{enumerate}
+\subsubsection{Determinar el PRN\%}
+\begin{enumerate}
+    \item Se toman las medidas a $I_a$ nominal y N nominal con tensión de armadura e I de campo constante.
+    \item Se eleva hasta su carga nominal agregandole un dispositivo fisico.
+    \item Se registran los datos.
+\end{enumerate}
+\subsection{Pérdidas en vacío}
+\begin{enumerate}
+    \item Para calcular las perdidas en el vacio se deben realizar medidas en dos velocidades distintas anotando los valores de corriente y tensión asociados.
 \end{enumerate}
 \section{Diagramas}
 \begin{figure}[H]
