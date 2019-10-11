@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.5.2)  10 OCT 2019 20:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.5.2)  10 OCT 2019 20:45
 entering extended mode
 **./Prelaboratorio6EndersonOmaña_GuillermoRaven.tex
 (Prelaboratorio6EndersonOmaña_GuillermoRaven.tex
@@ -993,34 +993,34 @@ File: recursos-Lab6/curvaDeVacioTeo.jpg Graphic file (type jpg)
 Package pdftex.def Info: recursos-Lab6/curvaDeVacioTeo.jpg  used on input line 
 92.
 (pdftex.def)             Requested size: 214.17462pt x 158.09023pt.
-[3] [4 <./recursos-Lab6/curvaDeVacioTeo.jpg>]
-
-LaTeX Warning: Reference `fig:diagMedRes' on page 5 undefined on input line 163
-.
-
-[5]
+[3] [4 <./recursos-Lab6/curvaDeVacioTeo.jpg>] [5]
 
 LaTeX Warning: Reference `fig:diagMedCurvaSat' on page 6 undefined on input lin
 e 169.
 
+<recursos-Lab6/diagMedRes.png, id=27, 638.385pt x 286.06876pt>
+File: recursos-Lab6/diagMedRes.png Graphic file (type png)
+<use recursos-Lab6/diagMedRes.png>
+Package pdftex.def Info: recursos-Lab6/diagMedRes.png  used on input line 178.
+(pdftex.def)             Requested size: 319.19171pt x 143.03403pt.
 
 LaTeX Warning: Reference `fig:diagramaMedRes' on page 6 undefined on input line
- 180.
+ 185.
 
-<recursos-Lab6/curvaCaractPreVILadoCampo.jpg, id=27, 842.39719pt x 448.67625pt>
+<recursos-Lab6/curvaCaractPreVILadoCampo.jpg, id=29, 842.39719pt x 448.67625pt>
 
 File: recursos-Lab6/curvaCaractPreVILadoCampo.jpg Graphic file (type jpg)
 <use recursos-Lab6/curvaCaractPreVILadoCampo.jpg>
 Package pdftex.def Info: recursos-Lab6/curvaCaractPreVILadoCampo.jpg  used on i
-nput line 183.
+nput line 188.
 (pdftex.def)             Requested size: 421.19756pt x 224.33757pt.
-[6]
-<recursos-Lab6/curvaCaractPreVILadoArmadura.jpg, id=31, 849.92531pt x 443.40656
+[6 <./recursos-Lab6/diagMedRes.png>]
+<recursos-Lab6/curvaCaractPreVILadoArmadura.jpg, id=34, 849.92531pt x 443.40656
 pt>
 File: recursos-Lab6/curvaCaractPreVILadoArmadura.jpg Graphic file (type jpg)
 <use recursos-Lab6/curvaCaractPreVILadoArmadura.jpg>
 Package pdftex.def Info: recursos-Lab6/curvaCaractPreVILadoArmadura.jpg  used o
-n input line 190.
+n input line 195.
 (pdftex.def)             Requested size: 424.96161pt x 221.70273pt.
 [7 <./recursos-Lab6/curvaCaractPreVILadoCampo.jpg> <./recursos-Lab6/curvaCaract
 PreVILadoArmadura.jpg>] (Prelaboratorio6EndersonOmaña_GuillermoRaven.aux
@@ -1032,13 +1032,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 19472 strings out of 492945
- 369136 string characters out of 3124477
- 401935 words of memory out of 3000000
- 23178 multiletter control sequences out of 15000+200000
+ 19462 strings out of 492945
+ 369044 string characters out of 3124477
+ 401805 words of memory out of 3000000
+ 23166 multiletter control sequences out of 15000+200000
  541935 words of font info for 61 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,9n,63p,615b,536s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,9n,63p,615b,538s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Guillermo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
 onts/cm/cmbx10.pfb><C:/Users/Guillermo/AppData/Local/Programs/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Guillermo/AppData/Local/Programs/
@@ -1050,10 +1050,10 @@ amsfonts/cm/cmr12.pfb><C:/Users/Guillermo/AppData/Local/Programs/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Guillermo/AppData/Local/Program
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Guillermo/AppDat
 a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Prelaboratorio6EndersonOmaña_GuillermoRaven.pdf (7 pages, 26
-6440 bytes).
+Output written on Prelaboratorio6EndersonOmaña_GuillermoRaven.pdf (7 pages, 29
+1831 bytes).
 PDF statistics:
- 65 PDF objects out of 1000 (max. 8388607)
+ 68 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
