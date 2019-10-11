@@ -67,43 +67,7 @@
     \item Estudiar los problemas asociados a la conmutación de una máquina de
     corriente continua.
 \end{itemize}
-\section{Marco Teórico}
-\subsection{Curva de saturación o vacio}
-En las máquinas de corriente continua, la curva de saturación o magnetización
-B=f(H) representa la característica interna de su circuito magnético y de sus
-bobinas. Para la medición de esta característica no se mide la inducción B en
-función del campo magnético H, sino dos cantidades eléctricas proporcionales a
-éstas: la fuerza electromotriz generada en vacío, $E_{0}$ contra la corriente del campo principal de excitación $I_{exc}$, obteniéndose así lo que se conoce como la curva de vacío (durante el ensayo la máquina esta sin carga o en vacío) o de saturación (en la curva se visualiza el codo de saturación del circuito magnético de la máquina).
 
-Es conocido que una máquina de p pares de polos, 2a vías en paralelo, y n
-conductores; que gira a la velocidad w, genera una fuerza electromotriz E0, igual
-a:
-\begin{equation}
-    Eo = k\cdot \phi \cdot w
-\end{equation}
-Si se hace girar la máquina a velocidad constante, a través de cualquier
-mecanismo externo (ej.: turbina, o en el laboratorio un motor sincrónico), la fuerza electromotriz es directamente proporcional al flujo $\phi$, que a su vez es proporcional a la densidad de flujo magnético (inducción) B. Luego para producir dicho flujo $\phi$, es necesario aplicar un campo magnético H, a través del circuito de excitación. El teorema de Ampère relaciona directamente el campo H a los amperios-vueltas magnetizantes del(os) circuito(s) de excitación, donde el campo H es proporcional a la fuerza magnetomotríz total aplicada.
-
-De esta forma determinando la curva de saturación o vacío, a través de
-mediciones de la tensión en los terminales de la armadura sin carga $U_{0}$
-(aproximadamente igual a $E_{0}$) para diferentes valores de corriente de excitación $I_{exc}$, a velocidad de giro w constante, se obtiene una imagen de la curva de magnetización B=f(H).
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{recursos-Lab6/curvaDeVacioTeo.jpg}
-    \caption{Curva de magnetización}
-    \label{fig:curvaDeVacioTeo}
-\end{figure}
-\subsection{Funcionamiento como generador}
-Cuando se trata de un generador de corriente continua, generalmente se
-considera que gira a una velocidad constante e igual a su velocidad nominal. Así
-las características externas de un generador mostrarán la evolución de una
-cantidad eléctrica vs otra manteniendo constante la tercera.
-Las tres variables eléctricas de un generador DC son:
-\begin{itemize}
-    \item $U_{c}$: Tensión en los terminales de la armadura.
-    \item $I_{a}:$ Corriente de armadura.
-    \item $I_{exc}:$ Corriente del campo de excitación principal.
-\end{itemize}
 \section{Lista de instrumentos}
 \begin{table}[H]
 	\caption{Lista de instrumentos de medición y componentes}
@@ -143,18 +107,25 @@ Las tres variables eléctricas de un generador DC son:
 \section{Condiciones de ensayo}
 Estas son las precauciones y normativas necesarias para realizar el laboratorio de forma segura y efectiva: 
 \begin{itemize}
-    \item \textbf{Respecto a la medición de la curva en vacío:} La máquina a la que se le hara la prueba deberá estar conectada como generador. Dado que tiene que girar a velocidad constante, se utilizara algun mecanismo externo que brinde tales características. 
+    \item \textbf{Respecto a la medición de la curva en vacío:} La máquina a la que se le hará la prueba deberá estar conectada como generador. Dado que tiene que girar a velocidad constante, se utilizara algún mecanismo externo que brinde tales características. 
     
-    Este sera un motor sincronico o una turbina. En el caso de emplearse un motor sincrónico el campo debera activarse al alcanzar una velocidad constante, debido a que para que exista par debe existir un desfasaje entre el campo magnético del rotor y el del estator.
-    \item \textbf{Respecto a la medición de resistencias:} Se trabajara asegurandose que la corriente máxima alcanzada en $I_{f}$ ó $I_{a}$ sea menor o igual al 20 \% de la corriente nominal. La resistencia obtenida mediante la pendiente de la recta debe ajustarse de acuerdo a la temperatura.
-    \item \textbf{Respecto a la medición de la característica de regulación (Motor):} Se debe mantener $U_{c}$ (tensión en los bornes) en su valor nominal y a velocidad nominal. 
+    Este sera un motor sincrónico o una turbina. En el caso de emplearse un motor sincrónico el campo deberá activarse al alcanzar una velocidad constante, debido a que para que exista par debe existir un desfajase entre el campo magnético del rotor y el del estátor.
+    \item \textbf{Respecto a la medición de resistencias:} Se trabajara asegurándose que la corriente máxima alcanzada en $I_{f}$ ó $I_{a}$ sea menor o igual al 20 \% de la corriente nominal. La resistencia obtenida mediante la pendiente de la recta debe ajustarse de acuerdo a la temperatura.
+    \item \textbf{Respecto a la medición de la característica de regulación:} Se debe mantener $U_{c}$ (tensión en los bornes) en su valor nominal y a velocidad nominal. 
+    \item  \textbf{Respecto a la medición del porcentaje de regulación:} Se debe comenzar a medir la tensión en los bornes comenzando desde el valor a plena carga.
+    \item \textbf{Respecto a la medición de la curva de carga:} Se debe medir a velocidad constante.
+    \item \textbf{Respecto a la medición de la curva electromecánica de par:} Se deben mantener $U_{c}$ constante y $I_{exc}$.
+    \item \textbf{Respecto a la medición de la curva electromecánica de velocidad:} La tensión en los bornes (Uc) deberá mantenerse a su valor nominal y la corriente de excitación también.
+    \item  \textbf{Respecto a la medición del porcentaje de regulación de velocidad:} Se comenzara a medir desde la carga nominal ($I_{a}$ nominal y N nominal).
+    \item  \textbf{Respecto a la medición de la curva de regulación de velocidad:} Sin importar si se utiliza el método de control por corriente de campo ó el método de ajuste de tensión en los terminales de armadura. Es necesario mantener en ambos el par constante, aunque en el primero la corriente de excitación es constante, en cambio en el segundo sera constante la tensión en los bornes.
+    \item  \textbf{Respecto a la medición de la curva de regulación de par:} Sin importar si se utiliza el método de control por corriente de campo ó el método de ajuste de tensión en los terminales de armadura. Es necesario mantener en ambos la velocidad constante, aunque en el primero la corriente de excitación es constante, en cambio en el segundo sera constante la tensión en los bornes.  
     \item \textbf{Respecto a la  vestimenta:} No usar franelas o camisas manga larga, llevar zapatos de goma y pantalones. No usar collares ni pulseras de metal.
     \item \textbf{Previo a las pruebas:} Hacer primero el montaje antes de energizar, al culminarlo preguntar al profesor si las conexiones son correctas para proceder con las pruebas.
     \item \textbf{Respecto a la comunicación:} Mantener informado sobre cualquier cambio en el montaje al compañero de laboratorio y por sobre todo informar si el circuito se encuentra energizado o no.
-	\item \textbf{Respecto a las curvas observadas:} No aceptar como adecuada una curva que este llena de ruido, ya que se puede deber a que algún elemento puede estar actuando como antena, esto originara imprecisión en los resultados.
+	\item \textbf{Respecto a las curvas observadas:} No aceptar como adecuada una curva que este llena de ruido, ya que se puede deber a que algún elemento puede estar actuando como antena, esto originara incertidumbre en los resultados.
 	\item \textbf{Respecto al numero de mediciones:}
 	Realizar al menos 5 mediciones para condiciones distintas.
-	\item \textbf{Respecto a la elección de componentes y las conexiones:} Evitar los componentes que puedan funcionar como antenas (como resistencias de shunt de tipo mariposa u algun otro que se encuentre muy expuesto) y cuidar los contactos de cada conexión.
+	\item \textbf{Respecto a la elección de componentes y las conexiones:} Evitar los componentes que puedan funcionar como antenas (como resistencias de shunt de tipo mariposa u algún otro que se encuentre muy expuesto) y cuidar los contactos de cada conexión.
     \item \textbf{Respecto a la manipulación:} En caso de maniobrar el circuito energizado manipular con la mano derecha, buscando mayores probabilidades de sobrevivir en caso de un accidente eléctrico.
 \end{itemize}
 \section{Procedimiento}
@@ -165,12 +136,12 @@ Estas son las precauciones y normativas necesarias para realizar el laboratorio 
     \item Manteniendo la tensión $V_{f}$ fija y variando el reostato en pasos equidistantes se tomara nota de los valores de tensión y corriente. Se tomaran al menos 4 mediciones.
     \item Se desconectara la alimentación del lado de campo y se conectara la fuente del lado de armadura a tensión nominal.
     \item Manteniendo la tensión $V_{a}$ fija y desplazando la cuchilla de arranque en pasos equidistantes se tomara nota de los valores de tensión en los bornes y la tensión en la resistencia de shunt. Se tomaran al menos 5 mediciones.
-    \item Se desconectara la alimentación del lado de armadura y se desenergizara el circuito.
+    \item Se desconectara la alimentación del lado de armadura y se des-energizara el circuito.
     \item Se armara el esquema de conexiones conectando el motor DC como generador de acuerdo a la figura \ref{fig:diagMedCurvaSat}.
-    \item Se encendera el generador sincronico y solo cuando alcance una velocidad constante se accionara el campo mediante las protecciones DC.
+    \item Se encenderá el generador sincrónico y solo cuando alcance una velocidad constante se accionara el campo mediante las protecciones DC.
     \item Manteniendo la velocidad del eje a su valor nominal se variara el reostato del lado de campo de forma que los datos sean tomados en espacios apropiados que permitirán una exactitud de la curva graficada entre nula excitación y 125 \% de la tensión nominal ($U_{nom}$), en la parte lineal de la curva con incrementos de 20 \% de $U_{nom}$ y pasos del 10 \% de $U_{nom}$,
     alrededor del codo de saturación que suele estar entre el 80 \% y el 110 \% de la $U_{nom}$.  
-    \item Se repetira el proceso del punto previo; pero desde el ultimo punto alcanzado hasta el valor minimo, respetando en lo posible que los pasos sean iguales. jajajajaja
+    \item Se repetirá el proceso del punto previo; pero desde el ultimo punto alcanzado hasta el valor mínimo, respetando en lo posible que los pasos sean iguales.
 \end{enumerate}
 \subsection{Características externas}
 \begin{enumerate}
@@ -190,13 +161,7 @@ Estas son las precauciones y normativas necesarias para realizar el laboratorio 
     \caption{Diagrama de conexión pruebas de Prueba curva de vacio}
     \label{fig:diagMedCurvaCaracteristica}
 \end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{./recursos-Lab6/diagGeneradorIndependiente.png}
-    \caption{Diagrama de conexión pruebas de Prueba curva de vacio}
-    \label{fig:diagGeneradorIndependiente}
-\end{figure}
-\section{Calculos preliminares}
+\section{Cálculos preliminares}
 \subsection{Características internas}
 \subsubsection{Resistencia interna }
 De acuerdo al diagrama de la figura \ref{fig:diagramaMedRes}, se espera una curva característica de tensión vs corriente para el lado de campo con una forma similar al de la figura \ref{fig:curvaCaractPreVILadoCampo} y en el lado de armadura su forma se asemejara a la figura \ref{fig:curvaCaractPreVILadoArmadura}.
@@ -215,14 +180,10 @@ La pendiente de la curva previa proporcionara el valor de la resistencia de camp
 \end{figure} 
 Como se puede observar en la figura \ref{fig:curvaCaractPreVILadoArmadura} a diferencia de la figura \ref{fig:curvaCaractPreVILadoCampo} no es una recta completamente. Al inicio de la curva se espera un comportamiento no lineal debido a la resistencia de las escobillas; Aunque desde cierto punto se vuelve lineal debido a que el ya mencionado efecto es despreciable, por lo que la pendiente de la zona lineal corresponde con el valor de la resistencia de armadura. 
 \subsection{Características externas}
-
-\section{Resultados experimentales}
-
-\section{Resultados Teóricos}
-
-\section{Análisis de resultados}
-\section{Conclusión}
-\newpage
-\section{Anexos}
-
+\subsubsection{Valores limites del reostato de campo paa conexión tipo shunt}
+Se calcula mediante la siguiente formula:
+\begin{equation}
+	Reosmax = m - Rf
+\end{equation}
+donde Rf es el arrollado de campo cuyo valor es medido en las características internas y m es la pendiente de la curva de magnetización.
 \end{document}
