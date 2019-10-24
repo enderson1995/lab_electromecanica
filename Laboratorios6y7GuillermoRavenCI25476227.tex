@@ -1,0 +1,274 @@
+\documentclass[11pt,letterpaper]{article}     % Tipo de documento y otras especificaciones
+\usepackage[utf8]{inputenc}                   % Para escribir tildes y eñes
+\usepackage[spanish]{babel}                   % Para que los títulos de figuras, tablas y otros estén en español
+\usepackage[apaciteclassic]{apacite}
+\usepackage{geometry}    
+\usepackage{textcomp}
+\geometry{left=25mm, right=25mm, top=25mm, bottom=25mm} % Tamaño del área de escritura de la página
+\usepackage{amsmath}      % Los paquetes ams son desarrollados por la American Mathematical Society
+\usepackage{amsfonts}     % y mejoran la escritura de fórmulas y símbolos matemáticos.
+\usepackage{booktabs}
+\usepackage{subfig}
+\usepackage{amssymb}
+\usepackage{graphicx}     % Para insertar gráficas
+\usepackage{float}		% Para ubicar las tablas y figuras justo después del texto
+\usepackage{pdfpages}
+\batchmode
+\usepackage{enumerate}
+\usepackage{siunitx}
+\pagestyle{plain} 
+\usepackage{graphics}
+\pagenumbering{arabic}
+\usepackage{multicol}   % Para varias columnas
+\usepackage{multirow}
+\usepackage{color}%Paquete para colocar color al texto
+%====================Español Venezolano Rápido============================
+\renewcommand\tablename{Tabla}
+\renewcommand\figurename{Figura}
+%\renewcommand\prefacename{Prefacio}
+\renewcommand\refname{REFERENCIAS}
+%\renewcommand\bibname{REFERENCIAS}
+\renewcommand\abstractname{Resumen}
+%\renewcommand\chaptername{CAPÍTULO}
+\renewcommand\appendixname{Apéndice}
+\renewcommand\contentsname{ÍNDICE GENERAL}
+\renewcommand\listfigurename{LISTA DE FIGURAS}
+\renewcommand\listtablename{LISTA DE TABLAS}
+\renewcommand\indexname{Índice Alfabético}
+\renewcommand\partname{Parte}
+
+%\renewcommand\enclname{Adjunto}
+%\renewcommand\ccname{Copia a}
+%\renewcommand\headtoname{A}
+%\renewcommand\pagename{Página}
+%\renewcommand\seename{véase}
+%\renewcommand\alsoname{véase también}
+%\renewcommand\proofname{Demostración}
+%\renewcommand\glossaryname{Glosario}
+%===================  Español venezolano =====================
+
+
+\author{\\Raven Guillermo CI: 25.476.227\\Profesor: Crespo Jorge \vspace*{1in}}
+\title{Universidad Central de Venezuela\\{ Facultad de Ingeniería\\Escuela de Ingeniería Eléctrica\\ Conversión Electromecánica de la energía\\\vspace*{1.5in} }Laboratorios 6 y 7\\MAQUINAS DE CORRIENTE CONTINUA\vspace*{1.35in}}
+\date{Caracas, \today}
+
+\begin{document}	% Inicio del documento
+\maketitle							% Título
+\newpage
+\tableofcontents
+\newpage
+\section{Objetivos}
+\begin{itemize}
+	\item Estudiar los diferentes tipos de motores de corriente continua y sus
+    aplicaciones en la industria.
+	\item Modelar en régimen permanente una máquina de corriente continua.
+	\item Determinar las curvas características más importantes de las máquinas de
+    corriente continua.
+    \item Estudiar los problemas asociados a la conmutación de una máquina de
+    corriente continua.
+\end{itemize}
+
+\section{Lista de instrumentos}
+\begin{table}[H]
+	\caption{Lista de instrumentos de medición y componentes}
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline 
+		Instrumento & Alcance ó especificaciones \\ \hline 
+		Reostato &  (0-100) $\Omega$; 2.4 A \\  
+		\hline 
+		Reostato &  (0-33) $\Omega$; 4.2 A \\  
+		\hline
+		Voltímetros de bobina móvil y hierro móvil &  (0-150) V/ (0-15) V/(0-30) V/(0-300) V\\  
+		\hline 
+			Multímetro fluke & -\\  
+		\hline 
+		Resistencia de shunt & 40 A @ 60 mV\\  
+		\hline
+		Tacometro & -\\  
+		\hline
+		Amperímetro de bobina móvil y hierro móvil &(0-1.2) A/ (0-6) A/(0-30) A \\ 
+		\hline
+		Protecciones AC & 25 A; 380 V\\ 
+		\hline
+		Protecciones DC & -\\ 
+		\hline
+		Carga lineal & (200,400,600,800,1K)W  \\
+        \hline
+        \multirow{8}{3cm}{Motor sincrónico} & 3.5 KVA \\ 
+        \cline{2-2}
+        & 120/208 V \\
+        \cline{2-2}
+        & 16,8/9,7 A\\
+        \cline{2-2}
+        &1000 rpm\\
+        \cline{2-2}
+        &Iexc 3 A\\
+        \cline{2-2}
+        &Vexc 125 V\\
+        \cline{2-2}
+        & fp 0,9
+        \\ \hline
+        \multirow{5}{3cm}{Motor DC} & 115 V \\ 
+        \cline{2-2}
+        & 56A  \\
+        \cline{2-2}
+        & 1000 rpm\\
+        \cline{2-2}
+        &6,5 hp\\
+        \cline{2-2}
+        &carga 100\%\\
+        \hline
+        \multirow{5}{3cm}{Generador DC} & 3 KV\\ 
+        \cline{2-2}
+        & 125 V \\
+        \cline{2-2}
+        &26,5 A\\
+        \cline{2-2}
+        & 1000 rpm\\
+        \hline
+
+        
+	\end{tabular} 
+\end{table}
+\section{Condiciones de ensayo}
+Estas son las precauciones y normativas necesarias para realizar el laboratorio de forma segura y efectiva: 
+\begin{itemize}
+    \item \textbf{Respecto a la medición de la curva en vacío:} La máquina a la que se le hará la prueba deberá estar conectada como generador. Dado que tiene que girar a velocidad constante, se utilizara algún mecanismo externo que brinde tales características. 
+    
+    Este sera un motor sincrónico o una turbina. En el caso de emplearse un motor sincrónico el campo deberá activarse al alcanzar una velocidad constante.
+    \item \textbf{Respecto a la medición de resistencias:} Se trabajara asegurándose que la corriente máxima alcanzada en $I_{f}$ ó $I_{a}$ sea menor o igual al 10 \% de la corriente nominal. La resistencia obtenida mediante la pendiente de la recta debe ajustarse de acuerdo a la temperatura.
+    \item \textbf{Respecto a la medición de la característica de regulación:} Se debe mantener $U_{c}$ (tensión en los bornes) en su valor nominal y a velocidad nominal. 
+    \item  \textbf{Respecto a la medición del porcentaje de regulación:} Se debe comenzar a medir la tensión en los bornes comenzando desde el valor a plena carga.
+    \item \textbf{Respecto a la medición de la curva de carga:} Se debe medir a velocidad constante.
+    \item \textbf{Respecto a la medición de la curva electromecánica de par:} Se deben mantener $U_{c}$ constante y $I_{exc}$.
+    \item \textbf{Respecto a la medición de la curva electromecánica de velocidad:} La tensión en los bornes (Uc) deberá mantenerse a su valor nominal y la corriente de excitación también.
+    \item  \textbf{Respecto a la medición del porcentaje de regulación de velocidad:} Se comenzara a medir desde la carga nominal ($I_{a}$ nominal y N nominal).
+    \item  \textbf{Respecto a la medición de la curva de regulación de velocidad:} Sin importar si se utiliza el método de control por corriente de campo ó el método de ajuste de tensión en los terminales de armadura. Es necesario mantener en ambos el par constante, aunque en el primero la corriente de excitación es constante, en cambio en el segundo sera constante la tensión en los bornes.
+    \item  \textbf{Respecto a la medición de la curva de regulación de par:} Sin importar si se utiliza el método de control por corriente de campo ó el método de ajuste de tensión en los terminales de armadura. Es necesario mantener en ambos la velocidad constante, aunque en el primero la corriente de excitación es constante, en cambio en el segundo sera constante la tensión en los bornes.  
+    \item \textbf{Respecto a la  vestimenta:} No usar franelas o camisas manga larga, llevar zapatos de goma y pantalones. No usar collares ni pulseras de metal.
+    \item \textbf{Previo a las pruebas:} Hacer primero el montaje antes de energizar, al culminarlo preguntar al profesor si las conexiones son correctas para proceder con las pruebas.
+    \item \textbf{Respecto a la comunicación:} Mantener informado sobre cualquier cambio en el montaje al compañero de laboratorio y por sobre todo informar si el circuito se encuentra energizado o no.
+	\item \textbf{Respecto a las curvas observadas:} No aceptar como adecuada una curva que este llena de ruido, ya que se puede deber a que algún elemento puede estar actuando como antena, esto originara incertidumbre en los resultados.
+	\item \textbf{Respecto al numero de mediciones:}
+	Realizar al menos 5 mediciones para condiciones distintas.
+	\item \textbf{Respecto a la elección de componentes y las conexiones:} Evitar los componentes que puedan funcionar como antenas (como resistencias de shunt de tipo mariposa u algún otro que se encuentre muy expuesto) y cuidar los contactos de cada conexión.
+    \item \textbf{Respecto a la manipulación:} En caso de maniobrar el circuito energizado manipular con la mano derecha, buscando mayores probabilidades de sobrevivir en caso de un accidente eléctrico.
+\end{itemize}
+\section{Procedimiento}
+\subsection{Características internas}
+\subsubsection{Caídas internas}
+\begin{enumerate}
+    \item Lo primero sera, hallar las resistencias internas de campo y armadura por lo que se realizaran las conexiones como en la Figura \ref{fig:diagMedRes}.
+    \item Se conectara unicamente el lado de campo con una fuente DC (a una fracción del valor nominal).
+    \item Manteniendo la tensión $V_{f}$ fija y variando el reostato en pasos equidistantes se tomara nota de los valores de tensión y corriente. Se tomaran al menos 4 mediciones.
+    \item Se desconectara la alimentación del lado de campo y se conectara la fuente del lado serie repitiendo así los pasos previos.
+    \item Se desconectara la alimentación del lado serie y se conectara la fuente del lado de armadura a tensión por debajo del valor nominal.
+    \item Manteniendo la tensión $V_{a}$ fija y desplazando la cuchilla de arranque en pasos equidistantes se tomara nota de los valores de tensión en los bornes y la tensión en la resistencia de shunt. Se tomaran al menos 5 mediciones.
+    
+    \item Se desconectara la alimentación del lado de armadura y se des-energizara el circuito.
+\end{enumerate}
+\subsubsection{Curva de saturación ó vacío}
+\begin{enumerate}
+	\item Se armara el esquema de conexiones conectando el motor DC como generador de acuerdo a la figura \ref{fig:diagMedCurvaCaracteristica}.
+	\item Se encenderá el generador sincrónico y solo cuando alcance una velocidad constante se accionara el campo mediante las protecciones DC.
+	\item Manteniendo la velocidad del eje a su valor nominal se variara el reostato del lado de campo de forma que los datos sean tomados en espacios apropiados que permitirán una exactitud de la curva graficada entre nula excitación y 125 \% de la tensión nominal ($U_{nom}$), en la parte lineal de la curva con incrementos de 20 \% de $U_{nom}$ y pasos del 10 \% de $U_{nom}$,
+	alrededor del codo de saturación que suele estar entre el 80 \% y el 110 \% de la $U_{nom}$.  
+	\item Se repetirá el proceso del punto previo; pero desde el ultimo punto alcanzado hasta el valor mínimo, respetando en lo posible que los pasos sean iguales.
+\end{enumerate}
+\subsection{Características externas}
+\subsubsection{Característica de regulación y porcentaje de regulación}
+\begin{enumerate}
+    \item Se realiza la conexión de la Figura \ref{fig:diagGeneradorIndependiente} de generador independiente.
+    \item Empleando el tacometro se verifica velocidad nominal en el generador.
+    \item Se ajusta $U_{c}$ inicialmente sin carga hasta alcanzar $U_{nom}$ con $I_{ext}$, una vez alcanzado $U_{nom}$ se registra el valor.
+    \item Se conecta carga al sistema, generando un cambio en los valores de $U_{c}$ e $I_a$.
+    \item Se ajusta $U_{c}$ con $I_{ext}$ hasta alcanzar valores nominales. Se registra el valor de $I_{ext}$ e $I_a$.
+    \item Se varía la carga y se repite hasta llegar a valores nominales.
+    \item Una vez registrado el ultimo valor se verifica que se encuentre en $U_{nom}$ e $I_{anom}$ en caso que sean diferentes se ajustarán a valores nominales, una vez verificado se desconectará la carga de forma gradual hasta retirarla completamente, luego se registra e valor de $U$ sin carga. 
+\end{enumerate}
+\subsection{Motor independiente}
+\subsubsection{Curva de velocidad en función de la corriente de armadura}
+\begin{enumerate}
+    \item Se realiza la conexión de la fig \ref{fig:diagMotorIndependiente} de motor independiente.
+    \item Se realiza la medición de la curva electromecánica de velocidad manteniendo Uc constante e $I_{ext}$ constante.
+    \item Se anotan las mediciones de $I_a$ y de la velocidad.
+    \item Se varia Rs, por lo que varia $I_a$ directamente. Se anotan los valores y se repite hasta tener varias mediciones.
+\end{enumerate}
+\subsubsection{Determinar el PRN\%}
+\begin{enumerate}
+    \item Se toman las medidas a $I_a$ nominal y N nominal con tensión de armadura e Iexc constante.
+    \item Se eleva la carga lineal hasta el valor nominal del motor. Se registran los datos
+    \item Se quita la carga y se toman los datos.
+\end{enumerate}
+\subsection{Pérdidas en vacío}
+\begin{enumerate}
+    \item Para calcular las perdidas en el vacío se deben realizar medidas en dos velocidades distintas anotando los valores de corriente y tensión asociados.
+\end{enumerate}
+\section{Diagramas}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{./recursos-Lab6/diagMedRes.png}
+    \caption{Diagrama de conexión pruebas de resistencias internas}
+    \label{fig:diagMedRes}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{./recursos-Lab6/diagMedCurvaVacio.png}
+    \caption{Diagrama de conexión pruebas de Prueba curva de vacio}
+    \label{fig:diagMedCurvaCaracteristica}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{./recursos-Lab6/diagGeneradorIndependiente.png}
+    \caption{Diagrama de conexión de generador independiente}
+    \label{fig:diagGeneradorIndependiente}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{./recursos-Lab6/diagMotorIndependient.png}
+    \caption{Diagrama de conexión de motor independiente}
+    \label{fig:diagMotorIndependiente}
+\end{figure}
+\section{Calculos preliminares}
+\subsection{Características internas}
+\subsubsection{Resistencia interna }
+De acuerdo al diagrama de la figura \ref{fig:diagMedRes}, se espera una curva característica de tensión vs corriente para el lado de campo con una forma similar al de la figura \ref{fig:curvaCaractPreVILadoCampo} y en el lado de armadura su forma se asemejara a la figura \ref{fig:curvaCaractPreVILadoArmadura}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{./recursos-Lab6/curvaCaractPreVILadoCampo.jpg}
+    \caption{Curva característica esperada V vs $I_{f}$}
+    \label{fig:curvaCaractPreVILadoCampo}
+\end{figure}
+La pendiente de la curva previa proporcionara el valor de la resistencia de campo.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{./recursos-Lab6/curvaCaractPreVILadoArmadura.jpg}
+    \caption{Curva característica esperada V vs $I_{a}$}
+    \label{fig:curvaCaractPreVILadoArmadura}
+\end{figure} 
+Como se puede observar en la figura \ref{fig:curvaCaractPreVILadoArmadura} a diferencia de la figura \ref{fig:curvaCaractPreVILadoCampo} no es una recta completamente. Al inicio de la curva se espera un comportamiento no lineal debido a la resistencia de las escobillas; Aunque desde cierto punto se vuelve lineal debido a que el ya mencionado efecto es despreciable, por lo que la pendiente de la zona lineal corresponde con el valor de la resistencia de armadura. 
+\section{Resultados}
+\subsection{Caídas internas}
+\subsubsection{Resistencia de campo}
+Se realizaron las siguientes mediciones:
+\begin{table}[H]
+	\centering
+	\caption{Valores obtenidos por método de voltímetro-amperímetro para Rf}
+	\label{VoltimetroAmperimetroRf}
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Tensión {[}V{]}} & \textbf{Corriente {[}A{]}} \\ \hline
+		6,0 $\pm$ 0,1            & 0,12 $\pm$ 0,02            \\ \hline
+		7,0 $\pm$ 0,1            & 0,14 $\pm$ 0,02            \\ \hline
+		8,0 $\pm$ 0,1            & 0,16 $\pm$ 0,02            \\ \hline
+		8,5 $\pm$ 0,1            & 0,18 $\pm$ 0,02            \\ \hline
+		9,0 $\pm$ 0,1            & 0,2 $\pm$ 0,02             \\ \hline
+	\end{tabular}
+\end{table}
+Utilizando los valores del cuadro \ref{VoltimetroAmperimetroRf} se linealizo mediante mínimos cuadrados y se obtuvo lo siguiente:
+
+\subsubsection{Resistencia de armadura y tensión en escobillas}
+\subsubsection{Resistencia serie}
+
+\end{document}

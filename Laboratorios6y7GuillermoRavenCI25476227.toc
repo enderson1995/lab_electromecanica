@@ -1,0 +1,23 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Objetivos}{3}% 
+\contentsline {section}{\numberline {2}Lista de instrumentos}{3}% 
+\contentsline {section}{\numberline {3}Condiciones de ensayo}{3}% 
+\contentsline {section}{\numberline {4}Procedimiento}{5}% 
+\contentsline {subsection}{\numberline {4.1}Caracter\IeC {\'\i }sticas internas}{5}% 
+\contentsline {subsubsection}{\numberline {4.1.1}Ca\IeC {\'\i }das internas}{5}% 
+\contentsline {subsubsection}{\numberline {4.1.2}Curva de saturaci\IeC {\'o}n \IeC {\'o} vac\IeC {\'\i }o}{5}% 
+\contentsline {subsection}{\numberline {4.2}Caracter\IeC {\'\i }sticas externas}{6}% 
+\contentsline {subsubsection}{\numberline {4.2.1}Caracter\IeC {\'\i }stica de regulaci\IeC {\'o}n y porcentaje de regulaci\IeC {\'o}n}{6}% 
+\contentsline {subsection}{\numberline {4.3}Motor independiente}{6}% 
+\contentsline {subsubsection}{\numberline {4.3.1}Curva de velocidad en funci\IeC {\'o}n de la corriente de armadura}{6}% 
+\contentsline {subsubsection}{\numberline {4.3.2}Determinar el PRN\%}{6}% 
+\contentsline {subsection}{\numberline {4.4}P\IeC {\'e}rdidas en vac\IeC {\'\i }o}{6}% 
+\contentsline {section}{\numberline {5}Diagramas}{7}% 
+\contentsline {section}{\numberline {6}Calculos preliminares}{8}% 
+\contentsline {subsection}{\numberline {6.1}Caracter\IeC {\'\i }sticas internas}{8}% 
+\contentsline {subsubsection}{\numberline {6.1.1}Resistencia interna }{8}% 
+\contentsline {section}{\numberline {7}Resultados}{9}% 
+\contentsline {subsection}{\numberline {7.1}Ca\IeC {\'\i }das internas}{9}% 
+\contentsline {subsubsection}{\numberline {7.1.1}Resistencia de campo}{9}% 
+\contentsline {subsubsection}{\numberline {7.1.2}Resistencia de armadura y tensi\IeC {\'o}n en escobillas}{9}% 
+\contentsline {subsubsection}{\numberline {7.1.3}Resistencia serie}{9}% 
