@@ -1,0 +1,251 @@
+\documentclass[11pt,letterpaper]{article}     % Tipo de documento y otras especificaciones
+\usepackage[utf8]{inputenc}                   % Para escribir tildes y eñes
+\usepackage[spanish]{babel}                   % Para que los títulos de figuras, tablas y otros estén en español
+\usepackage[apaciteclassic]{apacite}
+\usepackage{geometry}    
+\usepackage{textcomp}
+\geometry{left=25mm, right=25mm, top=25mm, bottom=25mm} % Tamaño del área de escritura de la página
+\usepackage{amsmath}      % Los paquetes ams son desarrollados por la American Mathematical Society
+\usepackage{amsfonts}     % y mejoran la escritura de fórmulas y símbolos matemáticos.
+\usepackage{booktabs}
+\usepackage{subfig}
+\usepackage{amssymb}
+\usepackage{graphicx}     % Para insertar gráficas
+\usepackage{float}		% Para ubicar las tablas y figuras justo después del texto
+\usepackage{pdfpages}
+\batchmode
+\usepackage{enumerate}
+\usepackage{siunitx}
+\pagestyle{plain} 
+\usepackage{graphics}
+\pagenumbering{arabic}
+\usepackage{multicol}   % Para varias columnas
+\usepackage{multirow}
+\usepackage{color}%Paquete para colocar color al texto
+%====================Español Venezolano Rápido============================
+\renewcommand\tablename{Tabla}
+\renewcommand\figurename{Figura}
+%\renewcommand\prefacename{Prefacio}
+\renewcommand\refname{REFERENCIAS}
+%\renewcommand\bibname{REFERENCIAS}
+\renewcommand\abstractname{Resumen}
+%\renewcommand\chaptername{CAPÍTULO}
+\renewcommand\appendixname{Apéndice}
+\renewcommand\contentsname{ÍNDICE GENERAL}
+\renewcommand\listfigurename{LISTA DE FIGURAS}
+\renewcommand\listtablename{LISTA DE TABLAS}
+\renewcommand\indexname{Índice Alfabético}
+\renewcommand\partname{Parte}
+
+%\renewcommand\enclname{Adjunto}
+%\renewcommand\ccname{Copia a}
+%\renewcommand\headtoname{A}
+%\renewcommand\pagename{Página}
+%\renewcommand\seename{véase}
+%\renewcommand\alsoname{véase también}
+%\renewcommand\proofname{Demostración}
+%\renewcommand\glossaryname{Glosario}
+%===================  Español venezolano =====================
+
+
+\author{\\Omaña Enderson CI:  24.757.361 \\Raven Guillermo CI: 25.476.227\\Profesor: Crespo Jorge \vspace*{1in}}
+\title{Universidad Central de Venezuela\\{ Facultad de Ingeniería\\Escuela de Ingeniería Eléctrica\\ Conversión Electromecánica de la energía\\\vspace*{1.5in} }Pre laboratorio 8\\MAQUINAS ASINCRÓNICAS O DE INDUCCIÓN\vspace*{1.35in}}
+\date{Caracas, \today}
+
+\begin{document}	% Inicio del documento
+\maketitle							% Título
+\newpage
+\tableofcontents
+\newpage
+\section{Objetivos}
+\begin{itemize}
+	\item Presentar los métodos de medición y las condiciones de ensayos mínimas necesarias para la realización de las pruebas de laboratorio que son base para la determinación del circuito equivalente convencional.
+	\item Deducir las ecuaciones matemáticas para la determinación de los parámetros del circuito equivalente.
+	\item Determinar las curvas características más importantes de las máquinas de corriente continua.
+    \item Presentar los algoritmos de los métodos iterativos para la determinación y ajuste del circuito equivalente, respectivamente.
+    \item Comprobar a través de determinaciones, la validez de los métodos presentados para la obtención del circuito equivalente de una maquina de inducción.
+\end{itemize}
+\section{Marco Teórico}
+\subsection{Método A}
+Se usa para maquinas cuyo ensayo de rotor trabado fue realizado con tensiones de frecuencia menor al valor nominal, tal que: 
+\begin{equation}
+	f_{cc}\approx 25\%f_{nom}
+\end{equation}
+Estos son los pasos a seguir del método:
+\begin{enumerate}
+	\item Se deben conocer la tensión y corriente por fase, en el estátor consumida durante la prueba de vacío $V_{1,0}$ y $I_{1,0}$. La potencia por fase consumida por la maquina en vacío $P_{1,0}$. Tensión y corriente por fase, en el estátor consumida durante la prueba de rotor trabado, $V_{1,cc}$ y $I_{1,cc}$ y la potencia por fase consumida por la maquina durante el ensayo de rotor trabado, $P_{1,cc}$.
+	\item Asumir un valor de $X_{1}$/$X_{2}$. En los casos que no se disponga de esta información tomar en cuenta los valores sugeridos en el estándar IEEE 112, segun el código ó ``Letra diseño" NEMA de la maquina:
+	\begin{itemize}
+		\item Diseño NEMA A,D y rotor bobinado: $X_{1}$/$X_{2}$ = 1.
+		\item Diseño NEMA B: $X_{1}$/$X_{2}$ = 0,67.
+		\item Diseño NEMA C: $X_{1}$/$X_{2}$ = 0,43.
+	\end{itemize}
+	\item Asumir un valor inicial de la reactancia de magnetización $X_{m,0}$ y estatórica de dispersión $X_{1,0}$. 
+	
+	Se toman como valores iniciales los valores obtenidos en las pruebas de vacío y rotor trabado de modo que quedarían las siguientes expresiones:
+	\begin{align}
+		X_{1_{(0)}} = \frac{\sqrt{\left(\frac{V_{1,cc}}{I_{1,cc}}\right)^{2}-\left(\frac{P_{1,cc}}{I_{1,cc}^{2}}\right)^{2}}}{1+\frac{X_{2}}{X_{1}}}\label{X10equ}\\
+		X_{m_{(0)}} = \left\|\frac{V_{1,0}}{I_{1,0}}-(R_{1}+jX_{1,(i)})\right\| \label{Xm0equ}
+	\end{align}
+	\item Calcular $Q_{1,0}$ y $Q_{1,cc}$ respectivamente mediante:
+	\begin{align}
+		Q_{1,0} = \sqrt{(V_{1,0}\cdot I_{1,0})^{2}-P_{1,0}^{2}} \label{Q10equ}\\
+		Q_{1,cc} = \sqrt{(V_{1,cc}\cdot I_{1,cc})^{2}-P_{1,cc}^{2}} \label{Q1ccequ}
+	\end{align}
+	\item Calcular $X_{m,(i+1)}$:
+	\begin{equation}
+		X_{m,(i+1)} = \frac{V_{1,0}^{2}}{Q_{1,0}-I_{1,0}^{2}\cdot X_{1,(i)}}\cdot \frac{1}{\left(1+\frac{X_{1,(i)}}{X_{m,(i)}}\right)^{2}}\label{Xm(i+1)equ}
+	\end{equation}
+	\item Calcular $X_{1,cc,(i)}$:
+		\begin{equation}
+	X_{1,cc,(i)} =  \frac{Q_{1,cc}}{I_{1,cc}^{2}\cdot\left(1+\frac{X_{1}}{X_{2}}+\frac{X_{1,(i)}}{X_{m,(i)}}\right)}\cdot\left(\frac{X_{1}}{X_{2}}+\frac{X_{1,(i)}}{X_{m,(i)}}\right) \label{X1cciequ} 
+	\end{equation}
+	\item Calcular $X_{1,(i+1)}$:
+	\begin{equation}
+		X_{1,(i+1)} = \frac{f_{nom}}{f_{cc}}X_{1,cc,(i)} \label{X1(i+1)equ}
+	\end{equation}
+	\item Para i = i+1 repetir paso 5 hasta el paso 7 hasta que los valores de las reactancias de dispersión y mutua se estabilicen alrededor de un 0,1\% de diferencia; es decir:
+	\begin{align}
+		|X_{1,(i+1)}-X_{1,(i)}| \leq 0,001 \label{esperadoX1}\\
+		|X_{m,(i+1)}-X_{m,(i)}| \leq 0,001 \label{esperadoXm}
+	\end{align}
+	\item Calcular $X_{2}$:
+	\begin{equation}
+		X_{2} = \frac{X_{1,(i+1)}}{\frac{X_{1}}{X_{2}}} \label{X2equ}
+	\end{equation}
+	\item Determinar gráficamente y a partir de las mediciones realizadas el valor de las perdidas mecánicas $P_{mec}$.
+	\item Calcular $P_{fe}$:
+	\begin{equation}
+		P_{fe} = P_{1,0}-\frac{P_{mec}}{3}-I_{1,0}^{2}\cdot R_{1}
+	\end{equation}
+	\item Calcular $g_{fe}$:
+	\begin{equation}
+		g_{fe} = \frac{P_{fe}}{V_{1,0}^{2}}\left(1+\frac{X_{1,(i+1)}}{X_{m,(i+1)}}\right)^{2} \label{gfeequ}
+	\end{equation} 
+	\item Calcular $R_{fe}$:
+	\begin{equation}
+	R_{fe} = \frac{1}{g_{fe}}
+	\end{equation}
+	\item Calcular $R_{2}$:
+	\begin{equation}
+		R_{2} = \left(\frac{P_{cc}}{I_{1,cc}^{2}}-R_{1}\right)\left(1+\frac{X_{2}}{X_{m,(i+1)}}\right)^{2}-\frac{X_{2}^{2}}{X_{1,(i+1)}^{2}}\cdot X_{1,cc,(i)}^{2}\cdot g_{fe}
+	\end{equation}
+\end{enumerate}
+
+\section{Lista de instrumentos}
+\begin{table}[H]
+	\caption{Lista de instrumentos de medición y componentes}
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline 
+		Instrumento & Alcance ó especificaciones \\ \hline 
+		Vatimetro &  (Se determinara en el laboratorio) \\  
+		\hline 
+		Reostato &  (0-33) $\Omega$; 4.2 A \\  
+		\hline
+		Termometro ó Termocupla &  - \\  
+		\hline
+		Transformador de corriente &  - \\  
+		\hline
+		Reostato &  (0-100) $\Omega$; 2.4 A \\  
+		\hline
+		Voltímetros de bobina móvil y hierro móvil &  (0-150) V/ (0-15) V/(0-30) V/(0-300) V\\  
+		\hline 
+		Multímetro CEN-TECH & -\\  
+		\hline 
+		Resistencia de shunt & (En laboratorio se determinaran)\\  
+		\hline
+		Tacometro & -\\  
+		\hline
+		Carga lineal & 200 w, 400w, 800w, 1kw\\  
+		\hline
+		Amperímetro de bobina móvil y hierro móvil &(0-1.2) A/ (0-6) A/(0-30) A \\ 
+		\hline
+		Protecciones AC & 25 A; 380 V\\ 
+		\hline
+		Protecciones DC & -\\ 
+		\hline
+		\multirow{5}{3cm}{Motor AC} & - V \\ 
+		\cline{2-2}
+		& - A  \\
+		\cline{2-2}
+		& - rpm\\
+		\cline{2-2}
+		&- hp\\
+		\cline{2-2}
+		&carga -\%\\
+		\hline
+		\multirow{5}{3cm}{Generador DC} & 3 KV\\ 
+		\cline{2-2}
+		& 125 V \\
+		\cline{2-2}
+		&26,5 A\\
+		\cline{2-2}
+		& 1000 rpm\\
+		\hline
+		
+		
+	\end{tabular} 
+\end{table}
+\section{Condiciones de ensayo}
+Estas son las precauciones y normativas necesarias para realizar el laboratorio de forma segura y efectiva: 
+\begin{itemize}
+    \item \textbf{Respecto a la prueba de vacío con rotor cortocircuitado:} La máquina a la que se le hará la prueba deberá estar conectada como motor. Es necesario tener especial cuidado de no seguir reduciendo la tensión cuando la maquina comience elevar la corriente, debido a que esto puede causar el colapso de la maquina.
+   
+    Es recomendable que los vatímetros posean un factor de potencia bajo.
+    \item \textbf{Respecto a la medición de resistencia estatórica:} Se trabajara asegurándose que la corriente máxima alcanzada sea menor o igual al 10 \% de la corriente nominal. La resistencia obtenida deberá ajustarse de acuerdo a la temperatura.
+    \item \textbf{Respecto a la prueba de rotor trabado:} Se debe tener especial cuidado en las cercanías de la carga completa, debido a las corrientes que se pueden alcanzar, por este motivo se trabajara a tensión reducida con un vatímetro preferiblemente de alto factor de potencia, se recomienda registrar  la temperatura del devanado del estátor o la resistencia del devanado del estátor.
+    
+    Se debe tener cuidado de no sobre calentar los devanados. Tomando las lecturas más altas primero y las lecturas más bajas en sucesión (Según IEEE Std 112-2004). Ayudará a igualar la temperatura.
+    \item \textbf{Respecto a la medición de la curva de carga:} Se debe medir a velocidad constante.
+    \item \textbf{Respecto a la  vestimenta:} No usar franelas o camisas manga larga, llevar zapatos de goma y pantalones. No usar collares ni pulseras de metal.
+    \item \textbf{Previo a las pruebas:} Hacer primero el montaje antes de energizar, al culminarlo preguntar al profesor si las conexiones son correctas para proceder con las pruebas.
+    \item \textbf{Respecto a la comunicación:} Mantener informado sobre cualquier cambio en el montaje al compañero de laboratorio y por sobre todo informar si el circuito se encuentra energizado o no.
+	\item \textbf{Respecto a las curvas observadas:} No aceptar como adecuada una curva que este llena de ruido, ya que se puede deber a que algún elemento puede estar actuando como antena, esto originara incertidumbre en los resultados.
+	\item \textbf{Respecto al numero de mediciones:}
+	Realizar al menos 5 mediciones para condiciones distintas.
+	\item \textbf{Respecto a la elección de componentes y las conexiones:} Evitar los componentes que puedan funcionar como antenas (como resistencias de shunt de tipo mariposa u algún otro que se encuentre muy expuesto) y cuidar los contactos de cada conexión.
+    \item \textbf{Respecto a la manipulación:} En caso de maniobrar el circuito energizado manipular con la mano derecha, buscando mayores probabilidades de sobrevivir en caso de un accidente eléctrico.
+\end{itemize}
+\section{Procedimiento}
+\subsection{Medición de resistencia estatórica}
+\begin{enumerate}
+	\item Lo primero sera, hallar las resistencias internas por fase, por lo que se realizaran las conexiones como en la Figura \ref{fig:diagMedResEstatorica}.
+	\item Se alimentara las fases del estátor a una fracción de la tensión nominal.
+	\item Manteniendo la tensión $V_{3\phi}$ fija, se irán cambiando las cuchillas, se tomara nota de los valores de tensión y corriente (en caso de ser muy elevada la corriente, se colocara una resistencia de shunt para realizar la medición) en cada fase. Se tomaran al menos 4 mediciones por cada fase.
+	\item Se verificara si la conexión del estátor se encuentra en delta o en estrella, ya que de ser delta la resistencia por fase sera:
+	\begin{equation}
+		R_{fase} = \frac{3}{2}R_{medida}
+	\end{equation}
+	Y en caso de ser estrella esta sera:
+	\begin{equation}
+		R_{fase} = \frac{R_{medida}}{2}
+	\end{equation}
+	\item Se alimentara el estátor a una tensión DC, que corresponda con una fracción de la tensión nominal y se realizaran las mismas mediciones de resistencia empleando un puente de kelvin ó mediante el método del voltímetro-amperímetro por fase. Los valores de resistencia dependerán del tipo de conexión, si se encuentra en estrella:
+	\begin{equation}
+	R_{fase} = \frac{V_{DC_{\phi}}}{2\cdot I_{DC_{\phi}}}
+	\end{equation} 
+	En delta sera:
+	\begin{equation}
+	R_{fase} = \frac{3\cdot V_{DC_{\phi}}}{2\cdot I_{DC_{\phi}}}
+	\end{equation} 
+	\item Se des-energizara el circuito.
+\end{enumerate}
+\subsection{Prueba en vacío con rotor cortocircuitado}
+\begin{enumerate}
+	\item Se armara el circuito presente en la Figura \ref{fig:diagPruebaDeVacio}, es importante denotar que para cada medición se tomara nota de la tensión  de linea, corriente de linea y potencia.
+	\item Se inician las medidas a partir de 125\% de la tensión nominal y se ira bajando en pasos de 25\% hasta que la corriente en vez de bajar comience a subir.
+\end{enumerate}
+\subsection{Prueba de rotor trabado}
+\begin{enumerate}
+	\item Se armara el circuito presente en la Figura \ref{fig:diagPruebaDeRotorTrabado}, es importante denotar que para cada medición se tomara nota de la tensión  de linea, corriente de linea y potencia.
+	\item Se realizara al menos una medición mientras el rotor se encuentra trabado, se espera que la corriente sea la nominal y la potencia activa.
+\end{enumerate}
+\subsection{Efecto de carga}
+\begin{enumerate}
+	\item Se armara el circuito presente en la Figura \ref{fig:diagCarga}, es importante denotar que para cada medición se tomara nota de la tensión  de linea, corriente de linea y potencia.
+	\item Se medirán los parámetros para distintas cargas conectadas al generador DC alimentado por el motor AC (al menos 4).
+\end{enumerate}
+\section{Diagramas}
+(Lo haremos a mano y cuando le entreguemos el laboratorio los pasaremos a computadora)
+\end{document}
