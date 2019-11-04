@@ -139,7 +139,9 @@ Estos son los pasos a seguir del método:
 	\begin{tabular}{|c|c|}
 		\hline 
 		Instrumento & Alcance ó especificaciones \\ \hline 
-		Vatimetro &  (Se determinara en el laboratorio) \\  
+		Vatimetro &  fp = 0,2 \\  
+		\hline 
+		Vatimetro &  fp Alto\\  
 		\hline 
 		Reostato &  (0-33) $\Omega$; 4.2 A \\  
 		\hline
@@ -211,17 +213,9 @@ Estas son las precauciones y normativas necesarias para realizar el laboratorio 
 \subsection{Medición de resistencia estatórica}
 \begin{enumerate}
 	\item Lo primero sera, hallar las resistencias internas por fase, por lo que se realizaran las conexiones como en la Figura \ref{fig:diagMedResEstatorica}.
-	\item Se alimentara las fases del estátor a una fracción de la tensión nominal.
-	\item Manteniendo la tensión $V_{3\phi}$ fija, se irán cambiando las cuchillas, se tomara nota de los valores de tensión y corriente (en caso de ser muy elevada la corriente, se colocara una resistencia de shunt para realizar la medición) en cada fase. Se tomaran al menos 4 mediciones por cada fase.
+	\item Se alimentara las fases del estátor con tensión DC a una fracción de la tensión nominal.
+	\item Manteniendo la tensión fija, se irán cambiando la resistencia del reostato de 100 $\Omega$, se tomara nota de los valores de tensión y corriente (en caso de ser muy elevada la corriente, se colocara una resistencia de shunt para realizar la medición) en cada fase. Se tomaran al menos 4 mediciones por cada fase.
 	\item Se verificara si la conexión del estátor se encuentra en delta o en estrella, ya que de ser delta la resistencia por fase sera:
-	\begin{equation}
-		R_{fase} = \frac{3}{2}R_{medida}
-	\end{equation}
-	Y en caso de ser estrella esta sera:
-	\begin{equation}
-		R_{fase} = \frac{R_{medida}}{2}
-	\end{equation}
-	\item Se alimentara el estátor a una tensión DC, que corresponda con una fracción de la tensión nominal y se realizaran las mismas mediciones de resistencia empleando un puente de kelvin ó mediante el método del voltímetro-amperímetro por fase. Los valores de resistencia dependerán del tipo de conexión, si se encuentra en estrella:
 	\begin{equation}
 	R_{fase} = \frac{V_{DC_{\phi}}}{2\cdot I_{DC_{\phi}}}
 	\end{equation} 
@@ -234,7 +228,7 @@ Estas son las precauciones y normativas necesarias para realizar el laboratorio 
 \subsection{Prueba en vacío con rotor cortocircuitado}
 \begin{enumerate}
 	\item Se armara el circuito presente en la Figura \ref{fig:diagPruebaDeVacio}, es importante denotar que para cada medición se tomara nota de la tensión  de linea, corriente de linea y potencia.
-	\item Se inician las medidas a partir de 125\% de la tensión nominal y se ira bajando en pasos de 25\% hasta que la corriente en vez de bajar comience a subir.
+	\item Se iniciaran las mediciones desde donde rompa la inercia inicial el motor hasta la tensión nominal y se ira bajando en pasos equidistantes hasta que la corriente en vez de bajar comience a subir.
 \end{enumerate}
 \subsection{Prueba de rotor trabado}
 \begin{enumerate}

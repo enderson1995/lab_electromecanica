@@ -267,8 +267,111 @@ Se realizaron las siguientes mediciones:
 	\end{tabular}
 \end{table}
 Utilizando los valores del cuadro \ref{VoltimetroAmperimetroRf} se linealizó mediante mínimos cuadrados y se obtuvo lo siguiente:
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{./recursos-Lab6/caidasInternasCAMPO.png}
+	\caption{Recta obtenida por regresión lineal que corresponde con la resistencia de campo}
+	\label{fig:rectaResistenciaCampo}
+\end{figure}
+Para calcular la incertidumbre asociada a la pendiente hallada se determino la desviación estandar:
+\begin{equation}
+	\sigma = \sqrt{\frac{\sum_{i=1}^{N}(y_{i}-m\cdot x_{i}-b)^{2}}{N-2}} \label{desvEstandar}
+\end{equation}
+Donde:\\
+N: numero de datos\\
+b: Punto de corte obtenido\\
+m: Pendiente obtenida\\
+$y_{i}$: Datos del eje y\\
+$x_{i}$: Datos del eje x
 
+Utilizando la desviación se calcula incertidumbre de la pendiente mediante la siguiente ecuación:
+\begin{equation}
+	\Delta m = \sigma \sqrt{\frac{N}{N\sum_{i=1}^{N}x_{i}^{2}-\left(\sum_{i=1}^{N}x_{i}\right)^{2}}} \label{incertiPendiente}
+\end{equation}
+Por lo tanto la resistencia de campo medida sera: $R_{f(medida)}$ = 37,50 $\pm$ 0,29 $\Omega$. No obstante se requiere ajustar el valor respecto a la temperatura empleando la siguiente expresión:
+\begin{align}
+	R_{f} = R_{(medida)} \frac{T_{r}+T_{k}}{T_{m}+T_{k}} \label{ajusteTemp}
+\end{align}
+donde:\\
+$T_{k}$ : 234.5 \textdegree C (cobre).\\
+$T_{m}$ : Temperatura a la cual se midió la resistencia, 25 \textdegree C.\\
+$T_{r}$ : Es la temperatura de referencia en \textdegree C (75 \textdegree C).\\
+Entonces: $R_{f(ajustada)}$ = 44,73 $\pm$ 0,29 $\Omega$.
 \subsubsection{Resistencia de armadura y tensión en escobillas}
+Se realizaron las siguientes mediciones:
+\begin{table}[H]
+	\centering
+	\caption{Valores obtenidos por método de voltímetro-amperímetro para Ra}
+	\label{VoltimetroAmperimetroRA}
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Tensión {[}V{]}} & \textbf{Corriente {[}A{]}} \\ \hline
+		0,869 $\pm$ 0,001            & 2,5 $\pm$ 0,5            \\ \hline
+		1,356 $\pm$ 0,001            & 4,0 $\pm$ 0,5            \\ \hline
+		1,563 $\pm$ 0,001            & 5,0 $\pm$ 0,5            \\ \hline
+		1,751 $\pm$ 0,001            & 5,5 $\pm$ 0,5            \\ \hline
+		2,220 $\pm$ 0,001            & 7,5 $\pm$ 0,5             \\ \hline
+		2,737 $\pm$ 0,001            & 10,0 $\pm$ 0,5             \\ \hline
+	\end{tabular}
+\end{table}
+Empleando los valores del cuadro \ref{VoltimetroAmperimetroRA} se linealizó mediante mínimos cuadrados y se obtuvo lo siguiente:
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{./recursos-Lab6/caidasInternasARMADURA.png}
+	\caption{Recta obtenida por regresión lineal que corresponde con la resistencia de armadura y tensión en escobillas}
+	\label{fig:rectaResistenciaArmadura}
+\end{figure}
+Utilizando los datos obtenidos de la recta que corresponden con la resistencia de armadura y las ecuaciones \ref{desvEstandar} y \ref{incertiPendiente} se obtuvo que la resistencia de armadura medida es igual a: $R_{a(medida)}$ = = 0,2462 $\pm$ 0,0081 $\Omega$. No obstante se requiere ajustar el valor respecto a la temperatura usando la ecuación \ref{ajusteTemp}, de esta forma la resistencia de armadura real sera: $R_{a(ajustada)}$ = 0,2936 $\pm$ 0,0081 $\Omega$.
+
+Por otro lado la tensión en las escobillas corresponde con el punto de corte con el eje y, la incertidumbre del mismo se calcula con:
+\begin{equation}
+	\Delta V_{esc} = \sigma \sqrt{\frac{\sum_{i=1}^{N}x_{i}^{2}}{N\sum_{i=1}^{N}x_{i}^{2}-\left(\sum_{i=1}^{N}x_{i}\right)^{2}}}
+\end{equation}
+Entonces dicha tensión sera: $V_{esc}$ = 0,3336 $\pm$ 0,0195 V. De acuerdo con IEC 34-2 e IEEE Std 113-1985 las escobillas del motor deben ser del tipo metal-grafito, con shunt debido a su tensión reducida. 
+\subsubsection{Modelo Obtenido}
+%% Enderson haz un diagrama circuital con conexión independiente donde le coloques el valor de las resistencias obtenidas con sus incertidumbres y la tensión en las escobillas obtenida
 \subsubsection{Resistencia serie}
+Se realizaron las siguientes mediciones:
+\begin{table}[H]
+	\centering
+	\caption{Valores obtenidos por método de voltímetro-amperímetro para Rs}
+	\label{VoltimetroAmperimetroRs}
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Tensión {[}mV{]}} & \textbf{Corriente {[}A{]}} \\ \hline
+		7,3 $\pm$ 0,1            & 0,44 $\pm$ 0,02            \\ \hline
+		8,5 $\pm$ 0,1            & 0,52 $\pm$ 0,02            \\ \hline
+		9,0 $\pm$ 0,1            & 0,54 $\pm$ 0,02            \\ \hline
+		10,0 $\pm$ 0,1            & 0,60 $\pm$ 0,02            \\ \hline
+		11,4 $\pm$ 0,1            & 0,70 $\pm$ 0,02             \\ \hline
+		13,6 $\pm$ 0,1            & 1,00 $\pm$ 0,02             \\ \hline
+	\end{tabular}
+\end{table}
+Utilizando los valores del cuadro \ref{VoltimetroAmperimetroRs} se linealizó mediante mínimos cuadrados y se obtuvo lo siguiente:
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{./recursos-Lab6/caidasInternasSERIE.png}
+	\caption{Recta obtenida por regresión lineal que corresponde con la resistencia serie}
+	\label{fig:rectaResistenciaSerie}
+\end{figure}
+Empleando los datos obtenidos de la recta que corresponden con la resistencia serie y las ecuaciones \ref{desvEstandar} y \ref{incertiPendiente} se obtuvo que la resistencia en serie es igual a: $R_{s}$ = 11,05 $\pm$ 0,35 m$\Omega$.  No obstante se requiere ajustar el valor respecto a la temperatura usando la ecuación \ref{ajusteTemp}, de esta forma la resistencia serie real sera: $R_{s(ajustada)}$ = 13,18 $\pm$ 0,35 m$\Omega$.
+\subsubsection{Curva de vacío}
+Se realizaron mediciones de corriente y tensión a una velocidad constante de 1140 $\pm$ 2 rpm.
+\begin{table}[H]
+	\centering
+	\caption{Meciciones de tensión de vacío y corriente de campo}
+	\label{MedCurvaVacio}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\multicolumn{2}{|c|}{Elevando}                        & \multicolumn{2}{c|}{Reduciendo}                       \\ \hline
+		\textbf{$U_{0}$ {[}V{]}} & \textbf{$I_{exc}$ {[}A{]}} & \textbf{$U_{0}$ {[}V{]}} & \textbf{$I_{exc}$ {[}A{]}} \\ \hline
+		60 $\pm$ 1               & 0,54 $\pm$ 0,02            & 109 $\pm$ 1              & 0,8 $\pm$ 0,1              \\ \hline
+		74 $\pm$ 1               & 0,66 $\pm$ 0,02            & 90 $\pm$ 1               & 0,7 $\pm$ 0,1              \\ \hline
+		89 $\pm$ 1               & 0,82 $\pm$ 0,02            & 80 $\pm$ 1               & 0,62 $\pm$ 0,02            \\ \hline
+		107 $\pm$ 1              & 1,00 $\pm$ 0,02            & 73 $\pm$ 1               & 0,54 $\pm$ 0,02            \\ \hline
+		132 $\pm$ 1              & 1,3 $\pm$ 0,1              & -                        & -                          \\ \hline
+	\end{tabular}
+\end{table}
+Con los valores obtenidos en el cuadro \ref{MedCurvaVacio} se empleo la función polyfit(x,y,n) (n es el orden del polinomio) de Matlab con el fin de obtener un polinomio que se ajuste a los datos. Y se evaluó el polinomio mediante polyval(), para posteriormente obtener la siguiente curva:
 
 \end{document}
