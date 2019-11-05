@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.5.2)  3 NOV 2019 00:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.5.2)  4 NOV 2019 23:32
 entering extended mode
 **./Laboratorios6y7GuillermoRavenCI25476227.tex
 (Laboratorios6y7GuillermoRavenCI25476227.tex
@@ -1068,16 +1068,28 @@ Overfull \hbox (42.13844pt too wide) in paragraph at lines 353--354
  [][] 
  []
 
-[12 <./recursos-Lab6/caidasInternasSERIE.png (PNG copy)>] [13] (Laboratorios6y7
-GuillermoRavenCI25476227.aux
+[12 <./recursos-Lab6/caidasInternasSERIE.png (PNG copy)>]
+<./recursos-Lab6/curvaDeVacioExp.png, id=64, 1028.34187pt x 436.63126pt>
+File: ./recursos-Lab6/curvaDeVacioExp.png Graphic file (type png)
+<use ./recursos-Lab6/curvaDeVacioExp.png>
+Package pdftex.def Info: ./recursos-Lab6/curvaDeVacioExp.png  used on input lin
+e 378.
+(pdftex.def)             Requested size: 514.16968pt x 218.3151pt.
+
+Overfull \hbox (42.13844pt too wide) in paragraph at lines 378--379
+ [][] 
+ []
+
+[13 <./recursos-Lab6/curvaDeVacioExp.png (PNG copy)>] [14] (Laboratorios6y7Guil
+lermoRavenCI25476227.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 19499 strings out of 492945
- 370357 string characters out of 3124477
- 402849 words of memory out of 3000000
- 23197 multiletter control sequences out of 15000+200000
+ 19508 strings out of 492945
+ 370599 string characters out of 3124477
+ 402886 words of memory out of 3000000
+ 23205 multiletter control sequences out of 15000+200000
  542276 words of font info for 62 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,11n,63p,548b,538s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1095,10 +1107,10 @@ ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users
 /Guillermo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
 8.pfb><C:/Users/Guillermo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
 amsfonts/cm/cmsy10.pfb>
-Output written on Laboratorios6y7GuillermoRavenCI25476227.pdf (13 pages, 442530
+Output written on Laboratorios6y7GuillermoRavenCI25476227.pdf (14 pages, 469234
  bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
+ 108 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -249,7 +249,7 @@ La pendiente de la curva previa proporcionara el valor de la resistencia de camp
 \end{figure} 
 Como se puede observar en la figura \ref{fig:curvaCaractPreVILadoArmadura} a diferencia de la figura \ref{fig:curvaCaractPreVILadoCampo} no es una recta completamente. Al inicio de la curva se espera un comportamiento no lineal debido a la resistencia de las escobillas; Aunque desde cierto punto se vuelve lineal debido a que el ya mencionado efecto es despreciable, por lo que la pendiente de la zona lineal corresponde con el valor de la resistencia de armadura. 
 \section{Resultados}
-\subsection{Caídas internas}
+\subsection{Características internas}
 \subsubsection{Resistencia de campo}
 Se realizaron las siguientes mediciones:
 \begin{table}[H]
@@ -372,6 +372,58 @@ Se realizaron mediciones de corriente y tensión a una velocidad constante de 11
 		132 $\pm$ 1              & 1,3 $\pm$ 0,1              & -                        & -                          \\ \hline
 	\end{tabular}
 \end{table}
-Con los valores obtenidos en el cuadro \ref{MedCurvaVacio} se empleo la función polyfit(x,y,n) (n es el orden del polinomio) de Matlab con el fin de obtener un polinomio que se ajuste a los datos. Y se evaluó el polinomio mediante polyval(), para posteriormente obtener la siguiente curva:
-
+Con los valores obtenidos en el cuadro \ref{MedCurvaVacio} se empleo la función polyfit(x,y,n) (n es el orden del polinomio) de Matlab con el fin de obtener un polinomio que se ajuste a los datos. Y se evaluó el polinomio mediante polyval(), para posteriormente obtener las siguientes curvas:
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{./recursos-Lab6/curvaDeVacioExp.png}
+	\caption{Curvas de vacío experimentales}
+	\label{fig:curvaDeVacioExp}
+\end{figure}
+\subsection{Características externas (Funcionamiento como generador)}
+\subsubsection{Curva característica de regulación}
+Se agrego carga al generador y se ajusto el reostato del lado de campo, con el fin de mantener la velocidad nominal. Se obtuvieron los siguientes resultados:
+\begin{table}[H]
+	\centering
+	\caption{Mediciones del efecto de la carga en la corriente de excitación}
+	\label{MedCurvaCaractReg}
+	\begin{tabular}{|c|c|}
+		\hline
+		\multicolumn{2}{|c|}{\textbf{$N_{nominal}$ = 1000 $\pm$ 2 {[}rpm{]}}} \\ \hline
+		\textbf{$I_{exc}$ {[}A{]}}   & \textbf{$I_{a}$ {[}A{]}}               \\ \hline
+		1,2 $\pm$ 0,1                & 0 (sin carga)                          \\ \hline
+		1,3 $\pm$ 0,1                & 8,0 $\pm$ 0,5                          \\ \hline
+		1,3 $\pm$ 0,1                & 16,0 $\pm$ 0,5                         \\ \hline
+		1,1 $\pm$ 0,1                & 3,5 $\pm$ 0,5 (disminuyendo la carga)  \\ \hline
+	\end{tabular}
+\end{table}
+\subsubsection{Porcentaje de regulación}
+Se midió la tensión a plena carga y luego sin carga. Se obtuvieron los siguientes resultados:
+\begin{table}[H]
+	\centering
+	\caption{Mediciones para el porcentaje de regulación}
+	\label{MedPReg}
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{$U_{pc}$ {[}V{]}} & \textbf{$U_{sc}$ {[}V{]}} \\ \hline
+		125 $\pm$ 1               & 132 $\pm$ 1               \\ \hline
+	\end{tabular}
+\end{table}
+\subsubsection{Curva de carga}
+Se midió la capacidad del generador para mantener la tensión nominal a distintas cargas (Ver cuadro \ref{MedCurvaCarga}). 
+\begin{table}[H]
+	\centering
+	\caption{Mediciones del efecto de carga en la tensión del generador}
+	\label{MedCurvaCarga}
+	\begin{tabular}{|c|c|}
+		\hline
+		\multicolumn{2}{|c|}{\textbf{$U_{c}$ =$U_{nominal}$ = 124 $\pm$ 1}} \\ \hline
+		\textbf{$U_{c}$ {[}V{]}}         & \textbf{$I_{a}$ {[}A{]}}         \\ \hline
+		120 $\pm$ 1                      & 3,0 $\pm$ 0,5                    \\ \hline
+		119 $\pm$ 1                      & 7,5 $\pm$ 0,5                    \\ \hline
+		118$\pm$ 1                       & 11,0 $\pm$ 0,5                   \\ \hline
+		117$\pm$ 1                       & 15,0 $\pm$ 0,5                   \\ \hline
+		116 $\pm$ 1                      & 18,0 $\pm$ 0,5                   \\ \hline
+	\end{tabular}
+\end{table}
+\subsection{Características externas (Funcionamiento como motor)}
 \end{document}

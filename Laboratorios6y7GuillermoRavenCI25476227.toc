@@ -17,9 +17,14 @@
 \contentsline {subsection}{\numberline {6.1}Caracter\IeC {\'\i }sticas internas}{8}% 
 \contentsline {subsubsection}{\numberline {6.1.1}Resistencia interna }{8}% 
 \contentsline {section}{\numberline {7}Resultados}{9}% 
-\contentsline {subsection}{\numberline {7.1}Ca\IeC {\'\i }das internas}{9}% 
+\contentsline {subsection}{\numberline {7.1}Caracter\IeC {\'\i }sticas internas}{9}% 
 \contentsline {subsubsection}{\numberline {7.1.1}Resistencia de campo}{9}% 
 \contentsline {subsubsection}{\numberline {7.1.2}Resistencia de armadura y tensi\IeC {\'o}n en escobillas}{10}% 
 \contentsline {subsubsection}{\numberline {7.1.3}Modelo Obtenido}{12}% 
 \contentsline {subsubsection}{\numberline {7.1.4}Resistencia serie}{12}% 
 \contentsline {subsubsection}{\numberline {7.1.5}Curva de vac\IeC {\'\i }o}{12}% 
+\contentsline {subsection}{\numberline {7.2}Caracter\IeC {\'\i }sticas externas (Funcionamiento como generador)}{13}% 
+\contentsline {subsubsection}{\numberline {7.2.1}Curva caracter\IeC {\'\i }stica de regulaci\IeC {\'o}n}{13}% 
+\contentsline {subsubsection}{\numberline {7.2.2}Porcentaje de regulaci\IeC {\'o}n}{14}% 
+\contentsline {subsubsection}{\numberline {7.2.3}Curva de carga}{14}% 
+\contentsline {subsection}{\numberline {7.3}Caracter\IeC {\'\i }sticas externas (Funcionamiento como motor)}{14}% 
