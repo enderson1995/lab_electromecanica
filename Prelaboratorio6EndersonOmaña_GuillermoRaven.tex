@@ -36,7 +36,7 @@
 \renewcommand\listtablename{LISTA DE TABLAS}
 \renewcommand\indexname{Índice Alfabético}
 \renewcommand\partname{Parte}
-\graphicspath{ {RecursosLab5/} }
+
 %\renewcommand\enclname{Adjunto}
 %\renewcommand\ccname{Copia a}
 %\renewcommand\headtoname{A}
@@ -89,7 +89,7 @@ mediciones de la tensión en los terminales de la armadura sin carga $U_{0}$
 (aproximadamente igual a $E_{0}$) para diferentes valores de corriente de excitación $I_{exc}$, a velocidad de giro w constante, se obtiene una imagen de la curva de magnetización B=f(H).
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{./recursos-Lab6/curvaDeVacioTeo.jpg}
+    \includegraphics[scale=0.5]{recursos-Lab6/curvaDeVacioTeo.jpg}
     \caption{Curva de magnetización}
     \label{fig:curvaDeVacioTeo}
 \end{figure}
@@ -172,6 +172,36 @@ Estas son las precauciones y normativas necesarias para realizar el laboratorio 
     alrededor del codo de saturación que suele estar entre el 80 \% y el 110 \% de la $U_{nom}$.  
     \item Se repetira el proceso del punto previo; pero desde el ultimo punto alcanzado hasta el valor minimo, respetando en lo posible que los pasos sean iguales. jajajajaja
 \end{enumerate}
+\subsection{Características externas}
+\begin{enumerate}
+    \item Se realiza la conexión de la fig \ref{fig:diagGeneradorIndependiente} de generador independiente.
+    \item Una vez conectado todo el circuito con el motor que funciona como generador, empleando el tacometro se verifica velocidad nominal en el generador.
+    \item Se ajusta $U$ inicalmente sin carga hasta alcanzar $U_{nom}$ con $I_{ext}$, una vez alcanzado $U_{nom}$ se registra el valor.
+    \item Se conecta carga al sistema, generando un cambio en los valores de $U$ e $I_a$.
+    \item Se ajusta $U$ con $I_{ext}$ hasta alcanzar valores nominales. Se registra el valor de $I_{ext}$ e $I_a$.
+    \item Se varía la carga y se repite hasta llegar a valores nominales.
+    \item Una vez registrado el ultimo valor se verifica que se encuentre en $U_{nom}$ e $I_{anom}$ en caso que sean diferentes se ajustarán a valores nominales, una vez verificado se desconectará la carga de forma gradual hasta retirarla completamente, luego se registra e valor de $U$ sin carga. 
+\end{enumerate}
+\subsection{Generador Shunt}
+\begin{enumerate}
+    \item Se realiza la conexión como el la fig \ref{fig:diagGeneradorShunt} de generador shunt.
+    \item Para medir la curva característica de carga se ajusta $U_{nom}$ sin carga a travez de $I_{ext}$ y $N_{ctte}$ tomando como valor inicial $I_a = 0$.
+    \item Se agrega carga al generador, se verifica que $I_{ext}$ se mantenga constante en caso contrario se ajusta con $R_p$.
+    \item Al verificar los valores constante se toman las medidas de $U$ e $I_a$ se varia la carga y se repite el paso 3 y 4.
+    \item Al tener los datos registrados se realiza la curva característica de regulación
+    \item Se ajusta $U$ inicalmente sin carga hasta alcanzar $U_{nom}$ con $I_{ext}$, una vez alcanzado $U_{nom}$ se registra el valor.
+    \item Se conecta carga al sistema, generando un cambio en los valores de $U$ e $I_a$.
+    \item Se ajusta $U$ con $I_{ext}$ hasta alcanzar valores nominales. Se registra el valor de $I_{ext}$ e $I_a$.
+    \item Se varía la carga y se repite hasta llegar a valores nominales.
+    \item Una vez registrado el ultimo valor se verifica que se encuentre en $U_{nom}$ e $I_{anom}$ en caso que sean diferentes se ajustarán a valores nominales, una vez verificado se desconectará la carga de forma gradual hasta retirarla completamente, luego se registra e valor de $U$ sin carga. 
+\end{enumerate}
+\subsection{Motor independiente}
+\begin{enumerate}
+    \item Se realiza la conexión de la fig \ref{fig:diagMotorIndependiente} de motor independiente.
+    \item Se realiza la medición de la curva electromecánica de velocidad manteniendo Uc constante e $I_{ext}$ constante.
+    \item Se anotan las mediciones de $I_a$ y de la velocidad.
+    \item Se varia Rs variando directamente $I_a$ se anota los valores y se repite hasta hacer varias mediciones.
+\end{enumerate}
 \section{Diagramas}
 \begin{figure}[H]
     \centering
@@ -184,6 +214,24 @@ Estas son las precauciones y normativas necesarias para realizar el laboratorio 
     \includegraphics[scale=0.5]{./recursos-Lab6/diagMedCurvaVacio.png}
     \caption{Diagrama de conexión pruebas de Prueba curva de vacio}
     \label{fig:diagMedCurvaCaracteristica}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{./recursos-Lab6/diagGeneradorIndependiente.png}
+    \caption{Diagrama de conexión de generador independiente}
+    \label{fig:diagGeneradorIndependiente}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{./recursos-Lab6/diagGeneradorShunt.png}
+    \caption{Diagrama de conexión de generador shunt}
+    \label{fig:diagGeneradorShunt}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{./recursos-Lab6/diagMotorIndependient.png}
+    \caption{Diagrama de conexión de motor independiente}
+    \label{fig:diagMotorIndependiente}
 \end{figure}
 \section{Calculos preliminares}
 \subsection{Características internas}
@@ -207,181 +255,11 @@ Como se puede observar en la figura \ref{fig:curvaCaractPreVILadoArmadura} a dif
 
 \section{Resultados experimentales}
 
-
-
-\subsection{Carga lineal}
-\subsubsection{Condición en vació}
-Se fijo la tensión en el lado de baja (120 $\pm$ 1) V con una corriente de (2.3 $\pm$ 0.1) A; además se obtuvo la forma de onda de la corriente en vació del lado de baja en la Figura \ref{ShuntEnVacio}.
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.2]{lab5/RecursosLab5/shuntEnVacio.jpeg}
-    \caption{Corriente en lado de baja. Escala 10 mV y 2 ms }
-    \label{ShuntEnVacio}
-\end{figure}
-\subsubsection{Mediciones en RMS y valores calculados}
-En la siguiente figura se aprecian los valores obtenidos por medio de  voltímetros, amperímetros y un vatimetro:
-\begin{table}[H]
-\centering
-\caption{Mediciones en lado de alta y baja para diversas cargas resistivas}
-\label{experiencia1}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-\textbf{Carga lineal {[}W{]}} & \textbf{$V_{entrada}$ {[}V{]}} & \textbf{$V_{salida}$ {[}V{]}} & \textbf{$I_{entrada}$ {[}A{]}} & \textbf{$I_{salida}$ {[}A{]}} & \textbf{$P_{salida}$ {[}W{]}} \\ \hline
-200                           & 120$\pm$1                      & 230$\pm$2                     & 2,9$\pm$0,1                    & 1,01$\pm$0,05                 & 220$\pm$10                    \\ \hline
-400                           & 118$\pm$1                      & 224$\pm$2                     & 4,3$\pm$0,1                    & 1,90$\pm$0,05                 & 410$\pm$10                    \\ \hline
-600                           & 118$\pm$1                      & 224$\pm$2                     & 5,9$\pm$0,1                    & 2,55$\pm$0,05                 & 620$\pm$10                    \\ \hline
-800                           & 112$\pm$1                      & 220$\pm$2                     & 7,5$\pm$0,1                    & 3,60$\pm$0,05                 & 790$\pm$10                    \\ \hline
-1000                          & 110$\pm$1                      & 218$\pm$2                     & 9,0$\pm$0,1                    & 4,40$\pm$0,05                 & 950$\pm$10                    \\ \hline
-\end{tabular}
-\end{table}
-Utilizando los resultados previos, extrayendo $R_{cc}$ y $X_{cc}$ del modelo obtenido en la practica previa se obtiene la tensión $\frac{V_{p}}{a}$ cuya expresión del error es la siguiente:
-\begin{equation}
-    Copia la formula de la incertidumbre
-\end{equation}
-Con $\frac{V_{p}}{a}$ y la tensión en el secundario se obtiene la regulación por medio de las siguientes formulas:
-\begin{align}
-    Reg = \frac{\frac{V_{p}}{a}-V_{salida}}{V_{salida}}\\
-    \Delta Reg = Copia la formula del error
-\end{align}
-Con las expresiones previas se obtuvo el siguiente cuadro:
-\begin{table}[H]
-\centering
-\caption{Regulación respecto a la carga lineal}
-\label{Regcuadro}
-\begin{tabular}{|c|c|c|}
-\hline
-\textbf{$\frac{V_{p}}{a}$ {[}V{]}} & \textbf{Regulación} & \textbf{Carga lineal {[}W{]}} \\ \hline
-                                   &                     & 220 $\pm$ 10                  \\ \hline
-                                   &                     & 410 $\pm$ 10                  \\ \hline
-                                   &                     & 620$\pm$10                    \\ \hline
-                                   &                     & 790$\pm$10                    \\ \hline
-                                   &                     & 950$\pm$10                    \\ \hline
-\end{tabular}
-\end{table}
-Con los valores de regulación obtenidos y la corriente en el lado de alta se comparo con su homologo teórico en la siguiente gráfica:
-%Pon la grafica por favor calacula todo lo anterior para mis valores de modelo tambien mi Rcc es 1,43$\pm$0,02 y Xcc=0,87$\pm$0,03
-\subsubsection{Corrientes en alta y baja para distintas cargas}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntBaja200W.jpeg}
-    \caption{Corriente en baja para carga de 200 W. Escalas 10 mV y 2 ms}
-    \label{shuntBaja200W}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntAlta200W.jpeg}
-    \caption{Corriente en alta para carga de 200 W. Escalas 10 mV y 2 ms}
-    \label{shuntAlta200W}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntBaja400W.jpeg}
-    \caption{Corriente en baja para carga de 200 W. Escalas 10 mV y 2 ms}
-    \label{shuntBaja400W}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntAlta400W.jpeg}
-    \caption{Corriente en alta para carga de 400 W. Escalas 10 mV y 2 ms}
-    \label{shuntAlta400W}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntBaja600W.jpeg}
-    \caption{Corriente en baja para carga de 600 W. Escalas 20 mV y 2 ms}
-    \label{shuntBaja600W}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntAlta600W.jpeg}
-    \caption{Corriente en alta para carga de 600 W. Escalas 20 mV y 2 ms}
-    \label{shuntAlta600W}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntBaja800W.jpeg}
-    \caption{Corriente en baja para carga de 800 W. Escalas 20 mV y 2 ms}
-    \label{shuntBaja800W}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntAlta800W.jpeg}
-    \caption{Corriente en alta para carga de 800 W. Escalas 20 mV y 2 ms}
-    \label{shuntAlta800W}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntBaja1kW.jpeg}
-    \caption{Corriente en baja para carga de 1 KW. Escalas 20 mV y 2 ms}
-    \label{shuntBaja1KW}
-\end{figure}
-\subsection{Carga no lineal}
-Se calcula la potencia aparente de la carga por medio de las siguientes expresiones:
-\begin{align}
-    S = I\cdot V\\
-    \Delta S = V\Delta I + I\Delta V
-\end{align}
-El factor de potencia:
-\begin{align}
-    fp = \frac{P(salida)}{S} \\
-    \Delta fp = \frac{\Delta P(salida) }{S} + \frac{P(salida)\cdot \Delta S}{S^{2}}
-\end{align}
-De acuerdo a las mediciones y las expresiones previas se obtiene el siguiente cuadro:
-\begin{table}[H]
-\centering
-\caption{Valores obtenidos para cargas no lineales}
-\label{ValoresCNL}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-\textbf{$V_{entrada}$ {[}V{]}} & \textbf{$V_{salida}$ {[}V{]}} & \textbf{$I_{entrada}$ {[}A{]}} & \textbf{$I_{salida}$ {[}A{]}} & \textbf{P (salida) {[}W{]}} & \textbf{Carga} \\ \hline
-28$\pm$1                       & 54$\pm$2                      & 3,0$\pm$0,1                    & 1,55$\pm$0,05                 & 70 $\pm$ 10                 & Inductiva      \\ \hline
-28$\pm$1                       & 53$\pm$1                      & 3,5$\pm$0,1                    & 1,80$\pm$0,05                 & 80 $\pm$ 10                 & Capacitiva     \\ \hline
-\multicolumn{3}{|c|}{\textbf{S {[}VA{]}}}                                                       & \multicolumn{3}{c|}{\textbf{fp}}                                             \\ \hline
-Inductiva                      & \multicolumn{2}{c|}{Llenar 1}                                  & Inductiva                     & \multicolumn{2}{c|}{Llenar 3}                \\ \hline
-Capacitiva                     & \multicolumn{2}{c|}{Llenar 2}                                  & Capacitiva                    & \multicolumn{2}{c|}{Llenar 4}                \\ \hline
-\end{tabular}
-\end{table}
-Se obtuvieron las siguientes curvas para ambas cargas:
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntInductiva.jpeg}
-    \caption{Corriente en baja para carga inductiva. Escala 5 mV y 2 ms}
-    \label{shuntInductiva}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.3]{lab5/RecursosLab5/shuntResisCapacitiva.jpeg}
-    \caption{Corriente en baja para carga resistiva capacitiva. Escala 5 mV y 2 ms}
-    \label{shuntResisCapacitiva}
-\end{figure}
 \section{Resultados Teóricos}
-Utilizando el modelo del transformador del diagrama \ref{fig:ModeloTransformadorAlta}, se obtuvo de forma teórica para cargas de (200, 400, 600, 800, 1000) W el siguiente cuadro:
-\begin{table}[H]
-\centering
-\caption{Regulación respecto a la carga lineal}
-\label{RegcuadroTEORICO}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{$\frac{V_{p}}{a}$ {[}V{]}} & \textbf{Regulación} & \textbf{Carga lineal {[}W{]}}  & \textbf{I(carga) {[}A{]}} \\ \hline
-                                   &                     & 200    &             \\ \hline
-                                   &                     & 400    &             \\ \hline
-                                   &                     & 600      &              \\ \hline
-                                   &                     & 800    &                \\ \hline
-                                   &                     & 1000   &                \\ \hline
-\end{tabular}
-\end{table}
+
 \section{Análisis de resultados}
 \section{Conclusión}
 \newpage
 \section{Anexos}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.7, angle=-90]{lab5/RecursosLab5/hojaDeDatos1.jpeg}
-    \caption{Hoja de datos 1}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.7, angle=-90]{lab5/RecursosLab5/hojaDeDatos2.jpeg}
-    \caption{Hoja de datos 2}
-\end{figure}
+
 \end{document}
