@@ -27,4 +27,4 @@
 \contentsline {subsubsection}{\numberline {7.2.1}Curva caracter\IeC {\'\i }stica de regulaci\IeC {\'o}n}{13}% 
 \contentsline {subsubsection}{\numberline {7.2.2}Porcentaje de regulaci\IeC {\'o}n}{14}% 
 \contentsline {subsubsection}{\numberline {7.2.3}Curva de carga}{14}% 
-\contentsline {subsection}{\numberline {7.3}Caracter\IeC {\'\i }sticas externas (Funcionamiento como motor)}{14}% 
+\contentsline {subsection}{\numberline {7.3}Caracter\IeC {\'\i }sticas externas (Funcionamiento como motor)}{15}% 

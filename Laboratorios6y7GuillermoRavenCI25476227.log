@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.5.2)  4 NOV 2019 23:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.5.2)  5 NOV 2019 23:43
 entering extended mode
 **./Laboratorios6y7GuillermoRavenCI25476227.tex
 (Laboratorios6y7GuillermoRavenCI25476227.tex
@@ -1080,16 +1080,40 @@ Overfull \hbox (42.13844pt too wide) in paragraph at lines 378--379
  [][] 
  []
 
-[13 <./recursos-Lab6/curvaDeVacioExp.png (PNG copy)>] [14] (Laboratorios6y7Guil
-lermoRavenCI25476227.aux
+<./recursos-Lab6/curvaCaractRegulacion.png, id=65, 1028.34187pt x 354.57469pt>
+File: ./recursos-Lab6/curvaCaractRegulacion.png Graphic file (type png)
+<use ./recursos-Lab6/curvaCaractRegulacion.png>
+Package pdftex.def Info: ./recursos-Lab6/curvaCaractRegulacion.png  used on inp
+ut line 402.
+(pdftex.def)             Requested size: 514.16968pt x 177.28691pt.
+
+Overfull \hbox (42.13844pt too wide) in paragraph at lines 402--403
+ [][] 
+ []
+
+[13 <./recursos-Lab6/curvaDeVacioExp.png (PNG copy)>] [14 <./recursos-Lab6/curv
+aCaractRegulacion.png (PNG copy)>]
+<./recursos-Lab6/CurvaDeCarga.png, id=73, 1028.34187pt x 429.85594pt>
+File: ./recursos-Lab6/CurvaDeCarga.png Graphic file (type png)
+<use ./recursos-Lab6/CurvaDeCarga.png>
+Package pdftex.def Info: ./recursos-Lab6/CurvaDeCarga.png  used on input line 4
+44.
+(pdftex.def)             Requested size: 514.16968pt x 214.92744pt.
+
+Overfull \hbox (42.13844pt too wide) in paragraph at lines 444--445
+ [][] 
+ []
+
+[15 <./recursos-Lab6/CurvaDeCarga.png (PNG copy)>] (Laboratorios6y7GuillermoRav
+enCI25476227.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 19508 strings out of 492945
- 370599 string characters out of 3124477
- 402886 words of memory out of 3000000
- 23205 multiletter control sequences out of 15000+200000
+ 19520 strings out of 492945
+ 371008 string characters out of 3124477
+ 402906 words of memory out of 3000000
+ 23215 multiletter control sequences out of 15000+200000
  542276 words of font info for 62 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,11n,63p,548b,538s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1107,10 +1131,10 @@ ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users
 /Guillermo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
 8.pfb><C:/Users/Guillermo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
 amsfonts/cm/cmsy10.pfb>
-Output written on Laboratorios6y7GuillermoRavenCI25476227.pdf (14 pages, 469234
+Output written on Laboratorios6y7GuillermoRavenCI25476227.pdf (15 pages, 500850
  bytes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
+ 113 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
