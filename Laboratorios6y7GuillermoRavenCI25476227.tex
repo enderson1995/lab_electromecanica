@@ -640,6 +640,37 @@ Para predeterminar el par en función de la velocidad de salida se parte de las 
 \section{Análisis de resultados}
 \subsection{Características Internas}
 Se comprobó que efectivamente la resistencia de campo es mucho más grande que la de armadura y serie. Además se asume que la máquina posee un aislamiento del tipo A,B o E, esto debido a que el efecto de la temperatura en las resistencias depende de dicho aislamiento. La temperatura aumenta enormemente el valor de las resistencias medidas, por lo tanto de no tomarlo en cuenta se tendría un modelo errado. \\
+	\begin{itemize}
+	\item \textbf{Predeterminar curva de velocidad en función de la tensión de entrada}
+\end{itemize}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{./recursos-Lab6/curvaPredeterminarVelocidadTension.png}
+	\caption{Curva de par en función de la corriente de armadura}
+	\label{fig:curvaPredeterminadaVelocidadTension}
+\end{figure}
+
+\subsection{Medición de pérdidas en vacío}
+Se realizaron las siguientes mediciones:
+\begin{table}[H]
+	\centering
+	\caption{Pruebas de medición de perdidas en vacío}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+	Medición	& $V_t$ [V] & N [rpm] & Vshunt [mV] & $I_a$ [A] \\ \hline
+	1 & 120 $\pm$1& 1040 $\pm$ 2 & 8,3 $\pm$0,1 & 5,53 $\pm$ 0,066 \\ \hline 
+	2 & 120 $\pm$1& 1252 $\pm$ 2 & 9,7 $\pm$0,1 & 6,47 $\pm$ 0,066\\ \hline
+	\end{tabular}
+\end{table}
+Para el calculo de las pérdidas en vacío se emplean las siguientes ecuaciones:
+\begin{eqnarray}
+Po1 = K_f N1 E1  + Kh N1^2E1^2\\
+Po2 = K_f N2 E1  + Kh N2^2E1^2
+\end{eqnarray}
+
+Para los correctos calculos se requerian de 4 mediciones, debido a que se tomaron 2 no es posible calcular las perdidas en vacío.
+
+
 
 En la prueba de vacío al ajustar la curva mediante mínimos cuadrados, se observa cierta deformación en la curva descendente de vacío, esto se debe unicamente a que se rompio la equidistancia entre dos mediciones adyacentes, no se regreso ajustando al valor adecuado debido a que el ciclo de histeresis obtenido sería erroneo. El motivo por el cual la curva descendente se encuentra por encima de la ascendente es debido a que existe un flujo remanente, dicho flujo solo puede ser eliminado con una fuerza coercitiva en la dirección adecuada. Al comparar el ciclo con el del transformador se observa que las perdidas por histeresis son menores, por supuesto esto dependerá de la construcción de la maquina DC y el transformador a comparar.
 \subsection{Características Externas (Funcionando como generador)}
