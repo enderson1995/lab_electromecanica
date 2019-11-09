@@ -614,6 +614,27 @@ Logrando obtener que el porcentaje de regulación de velocidad es de $8,56 \pm 0
 	\label{fig:curvaPredeterminadaVelocidadTension}
 \end{figure}
 
+\subsection{Medición de pérdidas en vacío}
+Se realizaron las siguientes mediciones:
+\begin{table}[H]
+	\centering
+	\caption{Pruebas de medición de perdidas en vacío}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+	Medición	& $V_t$ [V] & N [rpm] & Vshunt [mV] & $I_a$ [A] \\ \hline
+	1 & 120 $\pm$1& 1040 $\pm$ 2 & 8,3 $\pm$0,1 & 5,53 $\pm$ 0,066 \\ \hline 
+	2 & 120 $\pm$1& 1252 $\pm$ 2 & 9,7 $\pm$0,1 & 6,47 $\pm$ 0,066\\ \hline
+	\end{tabular}
+\end{table}
+Para el calculo de las pérdidas en vacío se emplean las siguientes ecuaciones:
+\begin{eqnarray}
+Po1 = K_f N1 E1  + Kh N1^2E1^2\\
+Po2 = K_f N2 E1  + Kh N2^2E1^2
+\end{eqnarray}
+
+Para los correctos calculos se requerian de 4 mediciones, debido a que se tomaron 2 no es posible calcular las perdidas en vacío.
+
+
 \section{Analísis de resultados}
 Al comparar los valores de resistencias es notable que la de mayor valor es la referente a la resistencia de campo, siendo el de menor valor la resistencia referente a la de armadura, el valor obtenido de las escobillas según el IEC 34-2 e IEEE std 113-1985 corresponden al tipo metal-grafito, en la Figura \ref{fig:modObtenido} se aprecia el modelo en campo y armadura construidos a partir de lo obtenido.\\
 
