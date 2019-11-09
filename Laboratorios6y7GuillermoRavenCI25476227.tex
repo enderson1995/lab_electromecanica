@@ -180,7 +180,7 @@ Estas son las precauciones y normativas necesarias para realizar el laboratorio 
 \subsubsection{Característica de regulación y porcentaje de regulación}
 \begin{enumerate}
     \item Se realiza la conexión de la Figura \ref{fig:diagGeneradorIndependiente} de generador independiente.
-    \item Empleando el tacometro se verifica velocidad nominal en el generador.
+    \item Empleando el tacómetro se verifica velocidad nominal en el generador.
     \item Se ajusta $U_{c}$ inicialmente sin carga hasta alcanzar $U_{nom}$ con $I_{ext}$, una vez alcanzado $U_{nom}$ se registra el valor.
     \item Se conecta carga al sistema, generando un cambio en los valores de $U_{c}$ e $I_a$.
     \item Se ajusta $U_{c}$ con $I_{ext}$ hasta alcanzar valores nominales. Se registra el valor de $I_{ext}$ e $I_a$.
@@ -266,14 +266,14 @@ Se realizaron las siguientes mediciones:
 		9,0 $\pm$ 0,1            & 0,2 $\pm$ 0,02             \\ \hline
 	\end{tabular}
 \end{table}
-Utilizando los valores del cuadro \ref{VoltimetroAmperimetroRf} se linealizó mediante mínimos cuadrados y se obtuvo lo siguiente:
+Utilizando los valores del cuadro \ref{VoltimetroAmperimetroRf} se linealizo mediante mínimos cuadrados y se obtuvo lo siguiente:
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.5]{./recursos-Lab6/caidasInternasCAMPO.png}
 	\caption{Recta obtenida por regresión lineal que corresponde con la resistencia de campo}
 	\label{fig:rectaResistenciaCampo}
 \end{figure}
-Para calcular la incertidumbre asociada a la pendiente hallada se determino la desviación estandar:
+Para calcular la incertidumbre asociada a la pendiente hallada se determino la desviación estándar:
 \begin{equation}
 	\sigma = \sqrt{\frac{\sum_{i=1}^{N}(y_{i}-m\cdot x_{i}-b)^{2}}{N-2}} \label{desvEstandar}
 \end{equation}
@@ -314,7 +314,7 @@ Se realizaron las siguientes mediciones:
 		2,737 $\pm$ 0,001            & 10,0 $\pm$ 0,5             \\ \hline
 	\end{tabular}
 \end{table}
-Empleando los valores del cuadro \ref{VoltimetroAmperimetroRA} se linealizó mediante mínimos cuadrados y se obtuvo lo siguiente:
+Empleando los valores del cuadro \ref{VoltimetroAmperimetroRA} se linealizo mediante mínimos cuadrados y se obtuvo lo siguiente:
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.5]{./recursos-Lab6/caidasInternasARMADURA.png}
@@ -333,7 +333,7 @@ Entonces dicha tensión sera: $V_{esc}$ = 0,3336 $\pm$ 0,0195 V. De acuerdo con 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.9]{./recursos-Lab6/diagModeloObtenido.png}
-	\caption{Modelo que invluye valores obtenidos}
+	\caption{Modelo que incluye valores obtenidos}
 	\label{fig:modObtenido}
 \end{figure}
 \subsubsection{Resistencia serie}
@@ -353,7 +353,7 @@ Se realizaron las siguientes mediciones:
 		13,6 $\pm$ 0,1            & 1,00 $\pm$ 0,02             \\ \hline
 	\end{tabular}
 \end{table}
-Utilizando los valores del cuadro \ref{VoltimetroAmperimetroRs} se linealizó mediante mínimos cuadrados y se obtuvo lo siguiente:
+Utilizando los valores del cuadro \ref{VoltimetroAmperimetroRs} se linealizo mediante mínimos cuadrados y se obtuvo lo siguiente:
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.5]{./recursos-Lab6/caidasInternasSERIE.png}
@@ -387,6 +387,7 @@ Con los valores obtenidos en el cuadro \ref{MedCurvaVacio} se empleo la función
 \end{figure}
 \subsection{Características externas (Funcionamiento como generador)}
 \subsubsection{Curva característica de regulación}
+\
 Se agrego carga al generador y se ajusto el reostato del lado de campo, con el fin de mantener la velocidad nominal. Se obtuvieron los siguientes resultados:
 \begin{table}[H]
 	\centering
