@@ -536,7 +536,7 @@ Utilizando los datos obtenidos en el cuadro previo se graficó la curva deseada 
 	\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.8]{./recursos-Lab6/curvaVelocidadCorriente.png}
-	\caption{Curva a través de datos experimentales velocidad en función de la corriente de armadura}
+	\caption{Curva a través de datos experimentales; velocidad en función de la corriente de armadura}
 	\label{fig:CurvaDeVelocidadCorriente}
 \end{figure}
 	\begin{itemize}
@@ -583,19 +583,26 @@ En el siguiente cuadro se observan la mediciones necesarias para obtener el porc
   & \Delta PNR = \frac{1 }{n_{pc}}\cdot \Delta n_{sc}+\frac{n_{sc} }{n_{pc}^2}\cdot \Delta n_{pc}
  \end{eqnarray}
  
-Logrando obtener que el porcentaje de regulación de velocidad es de $8,56 \pm 0,0179 \%$
+De modo que el porcentaje de regulación de velocidad es de $8,56 \pm 0,0179 \%$
 \begin{itemize}
 	\item \textbf{Predeterminación de porcentaje de regulación}
 \end{itemize}
+En la siguiente expresión se observa el porcentaje de regulación teórico, calculado a partir de la ecuación \ref{ec.Velocidad corriente}, con $I_{a}$ a plena carga 26 A, $V_{T}$ 115 V y Ra 0,2936 $\Omega$.
 \begin{equation}
-\% PNR = \frac{W_{sc} - W {pc}}{W_{pc}} \cdot 100 \% = 5.47 \%
+\% PNR = \frac{W_{sc} - W {pc}}{W_{pc}} \cdot 100 \% = 7,10 \%
 \end{equation}
 \subsubsection{Curva de par en función de corriente armadura}
+Utilizando los valores obtenidos en el cuadro \ref{Cuadro valores de motor Iext ctte} se graficó el par en función de la corriente en la siguiente Figura.
+	\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{./recursos-Lab6/curvaParCorrienteDeArmadura.png}
+	\caption{Curva experimental de par en función de la corriente de armadura}
+	\label{fig:CurvaDeParCorriente}
+\end{figure}
 \begin{itemize}
-	\item \textbf{Predeterminación de curva de par en función de la corriente de armadura}
+	\item \textbf{Predeterminación de la curva de par en función de la corriente de armadura}
 \end{itemize}
-
-	Para predeterminar la curva de par en función de la corriente de armadura se parte de la siguiente expresión:
+Partiendo  de la siguiente expresión:
 	\begin{equation}
 		\tau = K \cdot \Phi \cdot Ia = A \cdot Ia
 		\label{ecuacion par}
@@ -608,39 +615,27 @@ Logrando obtener que el porcentaje de regulación de velocidad es de $8,56 \pm 0
 	\caption{Curva predeterminada de par en función de la corriente de armadura}
 	\label{fig:CurvaPredeterminarDeParCorriente}
 \end{figure}
-\begin{itemize}
-	\item \textbf{Determinar curva de par en función de la corriente de armadura}
-\end{itemize}
-	
-	\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.8]{./recursos-Lab6/curvaParCorrienteDeArmadura.png}
-	\caption{Curva de par en función de la corriente de armadura}
-	\label{fig:CurvaDeParCorriente}
-\end{figure}
-	
-	\begin{itemize}
-	\item \textbf{Predeterminación de curva de par en función de la Velocidad}
-	\end{itemize}
-	Para predeterminar el par en función de la velocidad de salida se parte de las ecuaciones \ref{ec.Velocidad corriente} y \ref{ecuacion par} dando como resultado:
-	\begin{eqnarray}
-		\tau = \frac{A}{R_a}\cdot (Vt- W \cdot A)
-	\end{eqnarray}
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[scale=0.8]{./recursos-Lab6/curvaPredeterminarParVelocidad.png}
-		\caption{Curva de par en función de la corriente de armadura}
-		\label{fig:CurvapredeterminadaDeParVelocidad}
-	\end{figure}
-	\begin{itemize}
-	\item \textbf{Determinar curva de par en función de la velocidad}
-	\end{itemize}
+\subsubsection{Curva de par en función de la velocidad}
+Utilizando los valores obtenidos en el cuadro \ref{Cuadro valores de motor Iext ctte} se graficó la Figura \ref{fig:CurvaDeParVelocidad}.
 	\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.8]{./recursos-Lab6/curvaParVelocidad.png}
 	\caption{Curva de par en función de la corriente de armadura}
 	\label{fig:CurvaDeParVelocidad}
+\end{figure}
+	\begin{itemize}
+	\item \textbf{Predeterminación de curva de par en función de la Velocidad}
+\end{itemize}
+Para predeterminar el par en función de la velocidad de salida se parte de las ecuaciones \ref{ec.Velocidad corriente} y \ref{ecuacion par} dando como resultado:
+\begin{eqnarray}
+\tau = \frac{A}{R_a}\cdot (Vt- N \cdot A)
+\end{eqnarray}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{./recursos-Lab6/curvaPredeterminarParVelocidad.png}
+	\caption{Curva de par en función de la corriente de armadura}
+	\label{fig:CurvapredeterminadaDeParVelocidad}
 \end{figure}
 \section{Análisis de resultados}
 \subsection{Características Internas}
