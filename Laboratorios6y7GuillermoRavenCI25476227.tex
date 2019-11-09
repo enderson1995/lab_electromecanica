@@ -477,27 +477,62 @@ Con los datos obtenidos en el cuadro \ref{MedCurvaCarga}, se hallo la curva pres
 	\begin{table}[H]
 		\centering
 			\caption{Mediciones del efecto de la carga en la tensión del motor y medición indirecta de la corriente de armadura}
+			\label{Cuadro valores de motor Iext ctte}
 		\begin{tabular}{|c|c|c|c|c|}
 			\hline
 			Vshunt (mV) & N(rpm) & Carga (W) &Ia(A)& Tind\\ \hline
-			11,8 +- 0,1 & 1010 +- 2 & 200 & 7,87 +- 0,067&8.39 +- 0.124\\ \hline
-			13,5 +- 0,1 & 1008 +- 2 & 400 & 9,00 +- 0,067&9.58+-0.131\\ \hline
-			15,8 +- 0,1 & 1004 +- 2 & 600 & 10,53 +- 0,067&11.2+-0.14\\ \hline
-			17 ,0 +- 0,1 & 992 +- 2 & 800 & 11,33 +- 0,067& 12.2+-0.145\\ \hline
-			18,5+-0,1 & 988+-2 & 1000 & 12,33 +- 0,067& 13.3+-1.151\\ \hline
-			26,4+-0,1 & 974+-2 & 2000 & 17,60 +- 0,067&19.0+-0.18\\ \hline
-			28,2+-0,1 & 968+-2 & 2200 & 18,8 +- 0,067&20.3+-0.186\\ \hline
+			11,8 $\pm$ 0,1 & 1010 $\pm$ 2 & 200 & 7,87 $\pm$ 0,067&8.39 $\pm$ 0.124\\ \hline
+			13,5 $\pm$ 0,1 & 1008 $\pm$ 2 & 400 & 9,00 $\pm$ 0,067&9.58$\pm$0.131\\ \hline
+			15,8 $\pm$ 0,1 & 1004 $\pm$ 2 & 600 & 10,53 $\pm$ 0,067&11.2$\pm$0.14\\ \hline
+			17 ,0 $\pm$ 0,1 & 992 $\pm$ 2 & 800 & 11,33 $\pm$ 0,067& 12.2$\pm$0.145\\ \hline
+			18,5$\pm$0,1 & 988$\pm$2 & 1000 & 12,33 $\pm$ 0,067& 13.3$\pm$1.151\\ \hline
+			26,4$\pm$0,1 & 974$\pm$2 & 2000 & 17,60 $\pm$ 0,067&19.0$\pm$0.18\\ \hline
+			28,2$\pm$0,1 & 968$\pm$2 & 2200 & 18,8 $\pm$ 0,067&20.3$\pm$0.186\\ \hline
 		\end{tabular}
 	\end{table}
-	
+	\begin{itemize}
+		\item \textbf{Predeterminar curva N=f(Ia)}
+	\end{itemize}
+	Para predeterminar la curva de velocidad con respecto a la corriente de armadura con $I_{ext}$ y $V_{T}$ constante se tiene la siguiente ecuación:
+	\begin{equation}
+		Ea= V_T - I_a * R_a = K \Phi n = K \Phi  W= AW 
+	\end{equation}
+	En vacío se asumen las condiciones Ea = Vt =115, Ia=0 y W= 1000 rpm con lo que se ontiene:
+	\begin{equation}
+		A=\frac{Ea}{W}= \frac{115}{1000}=0,115
+		\label{ecuacion A}
+	\end{equation}
+	Con el valor de Ra previamente calculado es decir Ra= 0,2936 y la siguiente ecuación se predetermina la curva:
+	\begin{equation}
+		W=\frac{V_T - I_a * R_a}{A}
+		\label{ec.Velocidad corriente}
+	\end{equation}
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.8]{./recursos-Lab6/curvaPredeterminarVelocidadCorrienteArmadura.png}
+		\caption{Curva teorica de velocidad en función de la corriente de armadura}
+		\label{fig:CurvaPredeterminarVelocidadCorrienteArmadura}
+	\end{figure}
+	\begin{itemize}
+		\item \textbf{Determinar curva N=f(Ia) a través de los datos obtenidos}
+	\end{itemize}
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.8]{./recursos-Lab6/curvaVelocidadCorriente.png}
-		\caption{Curvas Velocidad en función de la corriente}
+		\caption{Curva a través de datos experimentales velocidad en función de la corriente de armadura}
 		\label{fig:CurvaDeVelocidadCorriente}
 	\end{figure}
 
-	
+	\begin{itemize}
+		\item \textbf{Predeterminar porcentaje de regulación de velocidad}
+ 	\end{itemize}
+		De la ecuación \ref{ec.Velocidad corriente} se planteal se siguiente ecuación con Ia a plena carga de 26A
+		\begin{equation}
+			\% PNR = \frac{W_{sc} - W {pc}}{W_{pc}} \cdot 100 \% = 5.47 \%
+		\end{equation}
+	\begin{itemize}
+		\item \textbf{Determinar porcentaje de regulación de velocidad a través de datos experimentales}
+	\end{itemize}
 	\begin{table}[H]
 		\centering
 		\caption{Mediciones de porcentaje de regulación}
@@ -505,18 +540,71 @@ Con los datos obtenidos en el cuadro \ref{MedCurvaCarga}, se hallo la curva pres
 		\begin{tabular}{|c|c|c|}
 			\hline
 			& pc & sc\\ \hline
-			Vshunt(mV)& 32,0 +- 0,1 & 9,7 +- 0,1 \\ \hline
-			W (rpm)& 958 +- 2 &1040 +- 2 \\ \hline
+			Vshunt(mV)& 32,0 $\pm$ 0,1 & 9,7 $\pm$ 0,1 \\ \hline
+			W (rpm)& 958 $\pm$ 2 &1040 $\pm$ 2 \\ \hline
 			carga(KW)  & 2,8 &0\\ \hline
 		\end{tabular}
 	\end{table}
+
  Para determinar el porcentaje de regulación de velocidad de toman los datos de velocidad del Cuadro \ref{Cuadro:Medicion porcentaje de regulacion} a través de la siguiente formula:
  \begin{eqnarray}
   PRN_{\%} =100\%*\frac{n_{sc}-n_{pc}}{n_{pc}}; 
-  & \Delta PNR = \frac{1 }{n_{pc}}\cdot \Delta n_{sc}+\frac{n_{sc} }{n_{pc}^2}\cdot \Delta n_{pc}
+  & \Delta PNR = \frac{1 }{n_{pc}}\cdot \Delta n_{sc}-\frac{n_{sc} }{n_{pc}^2}\cdot \Delta n_{pc}
  \end{eqnarray}
  
-Logrando obtener que el porcentaje de regulación de velocidad es de $8,55 \pm 0,43 \%$
+Logrando obtener que el porcentaje de regulación de velocidad es de $8,56 \pm 0,0179 \%$
+\begin{itemize}
+	\item \textbf{Predeterminar curva de par en función de la corriente de armadura}
+\end{itemize}
+
+	Para predeterminar la curva de par en función de la corriente de armadura se parte de la siguiente expresión:
+	\begin{equation}
+		\tau = K \cdot \Phi \cdot Ia = A \cdot Ia
+		\label{ecuacion par}
+	\end{equation}
+	
+	El valor de $k\cdot \Phi$ se toma de la ecuación \ref{ecuacion A} 
+	\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{./recursos-Lab6/curvaPredeterminarParCorrienteArmadura.png}
+	\caption{Curva predeterminada de par en función de la corriente de armadura}
+	\label{fig:CurvaPredeterminarDeParCorriente}
+\end{figure}
+\begin{itemize}
+	\item \textbf{Determinar curva de par en función de la corriente de armadura}
+\end{itemize}
+	
+	\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{./recursos-Lab6/curvaParCorrienteDeArmadura.png}
+	\caption{Curva de par en función de la corriente de armadura}
+	\label{fig:CurvaDeParCorriente}
+\end{figure}
+	
+	\begin{itemize}
+	\item \textbf{Predeterminar curva de par en función de la Velocidad}
+	\end{itemize}
+	Para predeterminar el par en función de la velocidad de salida se parte de las ecuaciones \ref{ec.Velocidad corriente} y \ref{ecuacion par} dando como resultado:
+	\begin{eqnarray}
+		\tau = \frac{A}{R_a}\cdot (Vt- W \cdot A)
+	\end{eqnarray}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.8]{./recursos-Lab6/curvaPredeterminarParVelocidad.png}
+		\caption{Curva de par en función de la corriente de armadura}
+		\label{fig:CurvapredeterminadaDeParVelocidad}
+	\end{figure}
+	\begin{itemize}
+	\item \textbf{Determinar curva de par en función de la velocidad}
+	\end{itemize}
+	\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{./recursos-Lab6/curvaParVelocidad.png}
+	\caption{Curva de par en función de la corriente de armadura}
+	\label{fig:CurvaDeParVelocidad}
+\end{figure}
+curvaPredeterminarVelocidadTension
 \section{Analísis de resultados}
 Al comparar los valores de resistencias es notable que la de mayor valor es la referente a la resistencia de campo, siendo el de menor valor la resistencia referente a la de armadura, el valor obtenido de las escobillas según el IEC 34-2 e IEEE std 113-1985 corresponden al tipo metal-grafito, en la Figura \ref{fig:modObtenido} se aprecia el modelo en campo y armadura construidos a partir de lo obtenido.\\
 
