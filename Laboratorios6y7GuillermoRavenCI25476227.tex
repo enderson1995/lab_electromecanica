@@ -365,7 +365,7 @@ Empleando los datos obtenidos de la recta que corresponden con la resistencia se
 Se realizaron mediciones de corriente y tensión a una velocidad constante de 1140 $\pm$ 2 rpm.
 \begin{table}[H]
 	\centering
-	\caption{Meciciones de tensión de vacío y corriente de campo}
+	\caption{Mediciones de tensión de vacío y corriente de campo}
 	\label{MedCurvaVacio}
 	\begin{tabular}{|c|c|c|c|}
 		\hline
@@ -387,7 +387,6 @@ Con los valores obtenidos en el cuadro \ref{MedCurvaVacio} se empleo la función
 \end{figure}
 \subsection{Características externas (Funcionamiento como generador)}
 \subsubsection{Curva característica de regulación}
-\
 Se agrego carga al generador y se ajusto el reostato del lado de campo, con el fin de mantener la velocidad nominal. Se obtuvieron los siguientes resultados:
 \begin{table}[H]
 	\centering
@@ -409,6 +408,47 @@ Utilizando los datos obtenidos en el cuadro \ref{MedCurvaCaractReg}, a excepció
 	\includegraphics[scale=0.5]{./recursos-Lab6/curvaCaractRegulacion.png}
 	\caption{Curvas característica de regulación experimental}
 	\label{fig:curvaCaractReg}
+\end{figure}
+\begin{itemize}
+	\item \textbf{Predeterminación de curva característica de regulación}
+\end{itemize}
+Para determinar la curva teórica se requiere asumir lo siguiente:
+\begin{itemize}
+	\item $I_{exc,0}$: corresponde con la corriente de campo en vacío obtenida en el cuadro \ref{MedCurvaCaractReg}, siendo 1,2 A.
+	\item $E_{n}$: es la tensión nominal de la placa (125 V).
+	\item $R_{a}$: se utilizara la obtenida de forma experimental (0,2936 $\Omega$).
+	\item $N_{f}$: es el numero de vueltas del embobinado de campo, se asumirá arbitrariamente 1000 vueltas dado que es un valor promedio.
+	\item $E_{0}$: es la tensión de vacío asociada a la corriente de excitación en vacío ($I_{exc,0}$), partiendo de la curva ascendente de vacío se obtiene 128,2 V.
+\end{itemize}
+Bajo dichas condiciones las ecuaciones que rigen el comportamiento de $I_{exc}$ son:
+\begin{align}
+	N_{f}I_{exc} = N_{f}I_{exc,0} - h \label{IexcRespectoRA}\\
+	h = E_{0}-E_{n}-I_{a}R_{a}\label{ReacArm}
+\end{align}
+Sustituyendo la ecuación \ref{ReacArm} en \ref{IexcRespectoRA} y despejando $I_{exc}$, se tiene:
+\begin{equation}
+	I_{exc} = I_{exc,0} - \frac{E_{0}-E_{n}-I_{a}R_{a}}{N_{f}}\label{IexcCalculada}
+\end{equation}
+Empleando la ecuación previa y asumiendo $I_{a}$ iguales a los obtenidos experimentalmente, se obtiene el siguiente cuadro:
+\begin{table}[H]
+	\centering
+	\caption{Calculo de parámetros de la curva característica de regulación y reacción del inducido}
+	\label{predeterCaractReg}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{$I_{exc}$ {[}A{]}} & \textbf{$I_{a}$ {[}A{]}} & \textbf{h {[}$A\cdot v${]}} \\ \hline
+		1,2                        & 0                        & 0                           \\ \hline
+		1,1991                     & 8                        & 0,8512                      \\ \hline
+		1,2015                     & 16                       & -1,4976                     \\ \hline
+		1,1978                     & 3,5                      & 2,1724                      \\ \hline
+	\end{tabular}
+\end{table}
+Utilizando los datos del cuadro previo y los datos experimentales se compara lo calculado con lo experimental en la siguiente Figura:
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{./recursos-Lab6/curvaCaractRegulacionComparacion.png}
+	\caption{Comparación de curvas de regulación}
+	\label{fig:curvaDeRegComparacion}
 \end{figure}
 \subsubsection{Porcentaje de regulación}
 Se midió la tensión a plena carga y luego sin carga. Se obtuvieron los siguientes resultados:
@@ -449,10 +489,11 @@ Con los datos obtenidos en el cuadro \ref{MedCurvaCarga}, se hallo la curva pres
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.5]{./recursos-Lab6/CurvaDeCarga.png}
-	\caption{Curvas de carga experimental}
+	\caption{Curva de carga experimental}
 	\label{fig:CurvaDeCarga}
 \end{figure}
 \subsection{Características externas (Funcionamiento como motor)}
+\subsubsection{Curva de velocidad respecto a la corriente de armadura}
 	Se realiza la medición de la velocidad y la corriente de armadura empleando un rshunt, variando la carga y manteniendo fija la corriente de campo en 1,4 $\pm0,1$ A y la tensión nominal en 115V $\pm1$.\\
 	
 		La rshunt utilizada es de 40A@60mV, los valores de tensión obtenidos al estar en la escala de mV se multiplican por un factor de 4/6 para obtener la corriente que por ella circula.\\
@@ -464,17 +505,17 @@ Con los datos obtenidos en el cuadro \ref{MedCurvaCarga}, se hallo la curva pres
 			\label{ec.power}
 		\end{equation}
 		
-		En la Figura \ref{fig:modObtenido} tenemos los parametros internos obtenidos previamente, Al despejar $\tau_{ind}$ de la ecuación \ref{ec.power} y encontrando el valor de Ea obtenemos:
+		En la Figura \ref{fig:modObtenido} tenemos los parámetros internos obtenidos previamente, Al despejar $\tau_{ind}$ de la ecuación \ref{ec.power} y encontrando el valor de Ea obtenemos:
 		
 		\begin{equation}
 			\tau_{ind}=\frac{U_n\cdot I_a-I_a^2\cdot R_a}{W_m}
 		\end{equation}
 		
 		\begin{equation}
-		\Delta \tau_{ind}=	\frac{\Delta Wn {\left({Ia}^2  Ra-Ia Un\right)}}{Wn^{2}}+\frac{Ia \Delta Un}{Wn}+\frac{ \Delta Ia {\left({Un}-2 {Ia} {Ra}\right)}}{{Wn}}-\frac{{Ia}^2 {\Delta Ra}}{Wn}
+		\Delta \tau_{ind}=	\frac{\Delta Wn {\left({Ia}^2  Ra-Ia Un\right)}}{Wn^{2}}+\frac{Ia \Delta Un}{Wn}+\frac{ \Delta Ia {\left({Un}-2 {Ia} {Ra}\right)}}{{Wn}}+\frac{{Ia}^2 {\Delta Ra}}{Wn}
 		\end{equation}
 		
-		Con las ecuaciones planteadas y datos obtenidos en el labotarorio se presenta el siguiente cuadro:
+		Con las ecuaciones planteadas y datos obtenidos en el laboratorio se presenta el siguiente cuadro:
 	\begin{table}[H]
 		\centering
 			\caption{Mediciones del efecto de la carga en la tensión del motor y medición indirecta de la corriente de armadura}
@@ -482,80 +523,76 @@ Con los datos obtenidos en el cuadro \ref{MedCurvaCarga}, se hallo la curva pres
 		\begin{tabular}{|c|c|c|c|c|}
 			\hline
 			Vshunt (mV) & N(rpm) & Carga (W) &Ia(A)& Tind\\ \hline
-			11,8 $\pm$ 0,1 & 1010 $\pm$ 2 & 200 & 7,87 $\pm$ 0,067&8.39 $\pm$ 0.124\\ \hline
-			13,5 $\pm$ 0,1 & 1008 $\pm$ 2 & 400 & 9,00 $\pm$ 0,067&9.58$\pm$0.131\\ \hline
-			15,8 $\pm$ 0,1 & 1004 $\pm$ 2 & 600 & 10,53 $\pm$ 0,067&11.2$\pm$0.14\\ \hline
-			17 ,0 $\pm$ 0,1 & 992 $\pm$ 2 & 800 & 11,33 $\pm$ 0,067& 12.2$\pm$0.145\\ \hline
-			18,5$\pm$0,1 & 988$\pm$2 & 1000 & 12,33 $\pm$ 0,067& 13.3$\pm$1.151\\ \hline
-			26,4$\pm$0,1 & 974$\pm$2 & 2000 & 17,60 $\pm$ 0,067&19.0$\pm$0.18\\ \hline
-			28,2$\pm$0,1 & 968$\pm$2 & 2200 & 18,8 $\pm$ 0,067&20.3$\pm$0.186\\ \hline
+			11,8 $\pm$ 0,1 & 1010 $\pm$ 2 & 200 & 7,87 $\pm$ 0,07&8,39 $\pm$ 0,12\\ \hline
+			13,5 $\pm$ 0,1 & 1008 $\pm$ 2 & 400 & 9,00 $\pm$ 0,07&9,58$\pm$0,13\\ \hline
+			15,8 $\pm$ 0,1 & 1004 $\pm$ 2 & 600 & 10,53 $\pm$ 0,07&11,2$\pm$0,14\\ \hline
+			17,0 $\pm$ 0,1 & 992 $\pm$ 2 & 800 & 11,33 $\pm$ 0,07& 12,20$\pm$0,15\\ \hline
+			18,5$\pm$0,1 & 988$\pm$2 & 1000 & 12,33 $\pm$ 0,07& 13,30$\pm$1,15\\ \hline
+			26,4$\pm$0,1 & 974$\pm$2 & 2000 & 17,60 $\pm$ 0,07&19,00$\pm$0,18\\ \hline
+			28,2$\pm$0,1 & 968$\pm$2 & 2200 & 18,80 $\pm$ 0,07&20,30$\pm$0,19\\ \hline
 		\end{tabular}
 	\end{table}
+Utilizando los datos obtenidos en el cuadro previo se graficó la curva deseada en la siguiente Figura.
+	\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{./recursos-Lab6/curvaVelocidadCorriente.png}
+	\caption{Curva a través de datos experimentales velocidad en función de la corriente de armadura}
+	\label{fig:CurvaDeVelocidadCorriente}
+\end{figure}
 	\begin{itemize}
-		\item \textbf{Predeterminar curva N=f(Ia)}
+		\item \textbf{Predeterminación de curva N=f(Ia)}
 	\end{itemize}
 	Para predeterminar la curva de velocidad con respecto a la corriente de armadura con $I_{ext}$ y $V_{T}$ constante se tiene la siguiente ecuación:
 	\begin{equation}
-		Ea= V_T - I_a * R_a = K \Phi n = K \Phi  W= AW 
+		Ea= V_T - I_a * R_a = K \Phi N = AN
 	\end{equation}
-	En vacío se asumen las condiciones Ea = Vt =115, Ia=0 y W= 1000 rpm con lo que se ontiene:
+	En vacío se asumen las condiciones Ea = Vt =115, Ia=0 y N= 1000 rpm con lo que se contiene:
 	\begin{equation}
-		A=\frac{Ea}{W}= \frac{115}{1000}=0,115
+		A=\frac{Ea}{N}= \frac{115}{1000}=0,115
 		\label{ecuacion A}
 	\end{equation}
 	Con el valor de Ra previamente calculado es decir Ra= 0,2936 y la siguiente ecuación se predetermina la curva:
 	\begin{equation}
-		W=\frac{V_T - I_a * R_a}{A}
+	N =\frac{V_T - I_a * R_a}{A}
 		\label{ec.Velocidad corriente}
 	\end{equation}
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.8]{./recursos-Lab6/curvaPredeterminarVelocidadCorrienteArmadura.png}
-		\caption{Curva teorica de velocidad en función de la corriente de armadura}
+		\caption{Curva teórica de velocidad en función de la corriente de armadura}
 		\label{fig:CurvaPredeterminarVelocidadCorrienteArmadura}
 	\end{figure}
-	\begin{itemize}
-		\item \textbf{Determinar curva N=f(Ia) a través de los datos obtenidos}
-	\end{itemize}
-	\begin{figure}[H]
-		\centering
-		\includegraphics[scale=0.8]{./recursos-Lab6/curvaVelocidadCorriente.png}
-		\caption{Curva a través de datos experimentales velocidad en función de la corriente de armadura}
-		\label{fig:CurvaDeVelocidadCorriente}
-	\end{figure}
-
-	\begin{itemize}
-		\item \textbf{Predeterminar porcentaje de regulación de velocidad}
- 	\end{itemize}
-		De la ecuación \ref{ec.Velocidad corriente} se planteal se siguiente ecuación con Ia a plena carga de 26A
-		\begin{equation}
-			\% PNR = \frac{W_{sc} - W {pc}}{W_{pc}} \cdot 100 \% = 5.47 \%
-		\end{equation}
-	\begin{itemize}
-		\item \textbf{Determinar porcentaje de regulación de velocidad a través de datos experimentales}
-	\end{itemize}
+\subsubsection{Porcentaje de regulación de velocidad}
+En el siguiente cuadro se observan la mediciones necesarias para obtener el porcentaje de regulación.
 	\begin{table}[H]
 		\centering
-		\caption{Mediciones de porcentaje de regulación}
+		\caption{Mediciones para el porcentaje de regulación}
 		\label{Cuadro:Medicion porcentaje de regulacion}
 		\begin{tabular}{|c|c|c|}
 			\hline
 			& pc & sc\\ \hline
 			Vshunt(mV)& 32,0 $\pm$ 0,1 & 9,7 $\pm$ 0,1 \\ \hline
-			W (rpm)& 958 $\pm$ 2 &1040 $\pm$ 2 \\ \hline
+			$N$ (rpm)& 958 $\pm$ 2 &1040 $\pm$ 2 \\ \hline
 			carga(KW)  & 2,8 &0\\ \hline
 		\end{tabular}
 	\end{table}
 
- Para determinar el porcentaje de regulación de velocidad de toman los datos de velocidad del Cuadro \ref{Cuadro:Medicion porcentaje de regulacion} a través de la siguiente formula:
+ Para determinar el porcentaje de regulación de velocidad se toman los datos del Cuadro \ref{Cuadro:Medicion porcentaje de regulacion} y a través de la siguientes formulas se determina el mismo.
  \begin{eqnarray}
   PRN_{\%} =100\%*\frac{n_{sc}-n_{pc}}{n_{pc}}; 
-  & \Delta PNR = \frac{1 }{n_{pc}}\cdot \Delta n_{sc}-\frac{n_{sc} }{n_{pc}^2}\cdot \Delta n_{pc}
+  & \Delta PNR = \frac{1 }{n_{pc}}\cdot \Delta n_{sc}+\frac{n_{sc} }{n_{pc}^2}\cdot \Delta n_{pc}
  \end{eqnarray}
  
 Logrando obtener que el porcentaje de regulación de velocidad es de $8,56 \pm 0,0179 \%$
 \begin{itemize}
-	\item \textbf{Predeterminar curva de par en función de la corriente de armadura}
+	\item \textbf{Predeterminación de porcentaje de regulación}
+\end{itemize}
+\begin{equation}
+\% PNR = \frac{W_{sc} - W {pc}}{W_{pc}} \cdot 100 \% = 5.47 \%
+\end{equation}
+\subsubsection{Curva de par en función de corriente armadura}
+\begin{itemize}
+	\item \textbf{Predeterminación de curva de par en función de la corriente de armadura}
 \end{itemize}
 
 	Para predeterminar la curva de par en función de la corriente de armadura se parte de la siguiente expresión:
@@ -583,7 +620,7 @@ Logrando obtener que el porcentaje de regulación de velocidad es de $8,56 \pm 0
 \end{figure}
 	
 	\begin{itemize}
-	\item \textbf{Predeterminar curva de par en función de la Velocidad}
+	\item \textbf{Predeterminación de curva de par en función de la Velocidad}
 	\end{itemize}
 	Para predeterminar el par en función de la velocidad de salida se parte de las ecuaciones \ref{ec.Velocidad corriente} y \ref{ecuacion par} dando como resultado:
 	\begin{eqnarray}
@@ -605,11 +642,42 @@ Logrando obtener que el porcentaje de regulación de velocidad es de $8,56 \pm 0
 	\caption{Curva de par en función de la corriente de armadura}
 	\label{fig:CurvaDeParVelocidad}
 \end{figure}
-curvaPredeterminarVelocidadTension
-\section{Analísis de resultados}
-Al comparar los valores de resistencias es notable que la de mayor valor es la referente a la resistencia de campo, siendo el de menor valor la resistencia referente a la de armadura, el valor obtenido de las escobillas según el IEC 34-2 e IEEE std 113-1985 corresponden al tipo metal-grafito, en la Figura \ref{fig:modObtenido} se aprecia el modelo en campo y armadura construidos a partir de lo obtenido.\\
+\section{Análisis de resultados}
+\subsection{Características Internas}
+Se comprobó que efectivamente la resistencia de campo es mucho más grande que la de armadura y serie. Además se asume que la máquina posee un aislamiento del tipo A,B o E, esto debido a que el efecto de la temperatura en las resistencias depende de dicho aislamiento. La temperatura aumenta enormemente el valor de las resistencias medidas, por lo tanto de no tomarlo en cuenta se tendría un modelo errado. \\
 
-En la prueba de vacío al ajustar una curva polinóica que se adapte con matlab se obtiene la joroba que aparece al inicio de la misma esto sucede en parte a que al tomar los valores descendentes por error se tomaron valores con distancias fuera de lo recomendado, sin embargo se logra apreciar que la curva descendente se encuentra por arriba de la ascendente, debido al flujo remanente lo cual es análogo al ciclo de histéresis dl transformador, que al desenergizar la energía remanente impide que se regrese por la misma curva.\\
+En la prueba de vacío al ajustar la curva mediante mínimos cuadrados, se observa cierta deformación en la curva descendente de vacío, esto se debe unicamente a que se rompio la equidistancia entre dos mediciones adyacentes, no se regreso ajustando al valor adecuado debido a que el ciclo de histeresis obtenido sería erroneo. El motivo por el cual la curva descendente se encuentra por encima de la ascendente es debido a que existe un flujo remanente, dicho flujo solo puede ser eliminado con una fuerza coercitiva en la dirección adecuada. Al comparar el ciclo con el del transformador se observa que las perdidas por histeresis son menores, por supuesto esto dependerá de la construcción de la maquina DC y el transformador a comparar.
+\subsection{Características Externas (Funcionando como generador)}
+Al hallar la curva de regulación en la Figura \ref{fig:curvaCaractReg} se observa el efecto de la reacción de armadura en la corriente de excitación, ya que a pesar de ser leve existe, para que no existiese, la corriente de excitación debería mantenerse constante respecto a las variaciones en la carga. Cabe destacar que en la Figura \ref{fig:curvaDeRegComparacion}, se observa como si la curva experimental fuese muy distinta a la obtenida mediante el calculo, aunque la realidad es que la calculada  siempre se encuentra dentro de la incertidumbre de las mediciones realizadas, también es necesario tomar en cuenta que la curva calculada se tomo para un $N_{f}$ arbitrario. Dados los resultados, el valor real debe encontrarse cerca de las 1000 vueltas. 
 
-    
+En el caso de la curva de carga se observa que al colocar distintas cargas, estas afectaran al flujo haciéndolo cada vez mayor, de igual forma al aumentar la corriente el efecto de la resistencia de armadura se hará cada vez más notable, de modo que siempre tendera a decaer la tensión en los bornes porque a pesar de que $E_{a}$ aumenta por el flujo y esto se contrapone con la caída en la resistencia, el flujo de toda máquina tiene un limite en el cual se satura, mientras que la corriente no. Y dado que los motores DC suelen trabajarse en el codo de saturación dicho limite se encuentra bastante cerca del punto de trabajo, de modo que el decaimiento en la tensión es visible a medida que se aumenta la carga. Por supuesto dicho decaimiento se le conoce como regulación, esta fue calculada en (5,6 $\pm$ 0,8) \%.
+\subsection{Características Externas (Funcionando como motor)}
+\newpage
+  \section{Conclusión}
+\newpage
+  \section{Anexos}
+  	\begin{figure}[H]
+  	\centering
+  	\includegraphics[scale=0.8]{./recursos-Lab6/HojaDeDatosA.jpeg}
+  	\caption{Hoja de datos parte A}
+  	\label{fig:Hoja1}
+  	\end{figure}  
+  \begin{figure}[H]
+  	\centering
+  	\includegraphics[scale=0.8]{./recursos-Lab6/HojaDeDatosB.jpeg}
+  	\caption{Hoja de datos parte B}
+  	\label{fig:Hoja2}
+  \end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{./recursos-Lab6/HojaDeDatosC.jpeg}
+	\caption{Hoja de datos parte C}
+	\label{fig:Hoja3}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{./recursos-Lab6/HojaDeDatosD.jpeg}
+	\caption{Hoja de datos parte D}
+	\label{fig:Hoja4}
+\end{figure}
 \end{document}
