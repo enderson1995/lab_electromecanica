@@ -589,7 +589,7 @@ De modo que el porcentaje de regulación de velocidad es de $8,56 \pm 0,0179 \%$
 \end{itemize}
 En la siguiente expresión se observa el porcentaje de regulación teórico, calculado a partir de la ecuación \ref{ec.Velocidad corriente}, con $I_{a}$ a plena carga 26 A, $V_{T}$ 115 V y Ra 0,2936 $\Omega$.
 \begin{equation}
-\% PNR = \frac{W_{sc} - W {pc}}{W_{pc}} \cdot 100 \% = 7,10 \%
+\% PNR = \frac{N_{sc} - N {pc}}{N_{pc}} \cdot 100 \% = 7,10 \%
 \end{equation}
 \subsubsection{Curva de par en función de corriente armadura}
 Utilizando los valores obtenidos en el cuadro \ref{Cuadro valores de motor Iext ctte} se graficó el par en función de la corriente en la siguiente Figura.
@@ -637,12 +637,8 @@ Para predeterminar el par en función de la velocidad de salida se parte de las 
 	\caption{Curva de par en función de la corriente de armadura}
 	\label{fig:CurvapredeterminadaDeParVelocidad}
 \end{figure}
-\section{Análisis de resultados}
-\subsection{Características Internas}
-Se comprobó que efectivamente la resistencia de campo es mucho más grande que la de armadura y serie. Además se asume que la máquina posee un aislamiento del tipo A,B o E, esto debido a que el efecto de la temperatura en las resistencias depende de dicho aislamiento. La temperatura aumenta enormemente el valor de las resistencias medidas, por lo tanto de no tomarlo en cuenta se tendría un modelo errado. \\
-	\begin{itemize}
-	\item \textbf{Predeterminar curva de velocidad en función de la tensión de entrada}
-\end{itemize}
+\subsubsection{Curva de velocidad en función de la tensión de entrada}
+Unicamente se realizo la predeterminación, ya que en la boratorio no se ajusto la tensión con el fin de observar el efecto en la velocidad del motor, dicha curva se encuentra en la Figura \ref{fig:curvaPredeterminadaVelocidadTension}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.8]{./recursos-Lab6/curvaPredeterminarVelocidadTension.png}
@@ -650,7 +646,7 @@ Se comprobó que efectivamente la resistencia de campo es mucho más grande que 
 	\label{fig:curvaPredeterminadaVelocidadTension}
 \end{figure}
 
-\subsection{Medición de pérdidas en vacío}
+\subsubsection{Medición de pérdidas en vacío}
 Se realizaron las siguientes mediciones:
 \begin{table}[H]
 	\centering
@@ -668,9 +664,12 @@ Po1 = K_f N1 E1  + Kh N1^2E1^2\\
 Po2 = K_f N2 E1  + Kh N2^2E1^2
 \end{eqnarray}
 
-Para los correctos calculos se requerian de 4 mediciones, debido a que se tomaron 2 no es posible calcular las perdidas en vacío.
+Para los correctos cálculos se requerían de 4 mediciones, debido a que se tomaron 2 no es posible calcular las perdidas en vacío. En consecuencia sin las perdidas no es posible hallar la la eficiencia de la maquina.
 
 
+\section{Análisis de resultados}
+\subsection{Características internas}
+Se comprobó que efectivamente la resistencia de campo es varias veces más grande que la serie y la de armadura, por otro lado el efecto de la temperatura es lo suficientemente grande como para ser imposible el ignorarlo, al momento de ajustar las resistencias a los valores usados en el modelo\\
 
 En la prueba de vacío al ajustar la curva mediante mínimos cuadrados, se observa cierta deformación en la curva descendente de vacío, esto se debe unicamente a que se rompio la equidistancia entre dos mediciones adyacentes, no se regreso ajustando al valor adecuado debido a que el ciclo de histeresis obtenido sería erroneo. El motivo por el cual la curva descendente se encuentra por encima de la ascendente es debido a que existe un flujo remanente, dicho flujo solo puede ser eliminado con una fuerza coercitiva en la dirección adecuada. Al comparar el ciclo con el del transformador se observa que las perdidas por histeresis son menores, por supuesto esto dependerá de la construcción de la maquina DC y el transformador a comparar.
 \subsection{Características Externas (Funcionando como generador)}
@@ -678,8 +677,18 @@ Al hallar la curva de regulación en la Figura \ref{fig:curvaCaractReg} se obser
 
 En el caso de la curva de carga se observa que al colocar distintas cargas, estas afectaran al flujo haciéndolo cada vez mayor, de igual forma al aumentar la corriente el efecto de la resistencia de armadura se hará cada vez más notable, de modo que siempre tendera a decaer la tensión en los bornes porque a pesar de que $E_{a}$ aumenta por el flujo y esto se contrapone con la caída en la resistencia, el flujo de toda máquina tiene un limite en el cual se satura, mientras que la corriente no. Y dado que los motores DC suelen trabajarse en el codo de saturación dicho limite se encuentra bastante cerca del punto de trabajo, de modo que el decaimiento en la tensión es visible a medida que se aumenta la carga. Por supuesto dicho decaimiento se le conoce como regulación, esta fue calculada en (5,6 $\pm$ 0,8) \%.
 \subsection{Características Externas (Funcionando como motor)}
+En la Figura \ref{fig:CurvaDeVelocidadCorriente} se observa la curva de velocidad en función de la corriente de armadura, segun la predeterminación esta debería se una recta sin embargo varios de los puntos se alejan del comportamiento deseado más de lo que deberían, esto se debe a que al ajustar el campo, para obtener tensión nominal, la corriente en el mismo se alejaba en cierta medida de su valor de excitación en vacío, por lo que se observa un leve efecto de reacción de armadura al final de la curva, sin embargo los resultados son adecuados a la forma en la que se midió.
+
+El porcentaje de regulación es ligeramente superior al valor esperado en las predeterminaciones, esto puede deberse a que al calcular teóricamente no se esta tomando en cuenta las perdidas mecánicas, del generador acoplado al motor. Sin embargo el que la regulación sea superior al valor esperado es un valor satisfactorio.
+
+En la curva de par corriente de armadura se observa un comportamiento bastante lineal y parecido a su predeterminación y como es de esperarse a medida que aumenta la carga el par incrementara.
+
+La curva de par velocidad se encuentra sujeta a incertidumbres mayores que la previa, debido a que esta fue determinada utilizando dos mediciones que no es posible medirlas directamente en el laboratorio. No obstante se obtuvo un comportamiento similar a su predeterminación. 
 \newpage
   \section{Conclusión}
+  El caracterizar una maquina DC es una tarea repetitiva que requiere múltiples mediciones para conocer su comportamiento. Las características internas son comunes para cualquier conexión que se le aplique a la maquina, pero las externas dependen del tipo de conexión, ya que modifican el comportamiento de la maquina por completo, por supuesto existen similitudes. Las ecuaciones que rigen a cada modelo son completamente distintas, e incluso aunque en papel un generador y un motor con la misma conexión posean el mismo comportamiento con la diferencia de la dirección de la energía en la realidad una maquina funcionando como motor puede tener o no los mismos valores nominales,esto modifica completamente la forma en la que se realizaran las conexiones de la maquina, puesto que por ejemplo el hecho de tener corrientes distintas implica un cambio en el diámetro de los conductores.
+  
+  En definitiva si se quiere obtener un modelo de la maquina ajustado a lo que refiere el fabricante es necesario cumplir fielmente las condiciones impuestas en la norma IEEEE-113 
 \newpage
   \section{Anexos}
   	\begin{figure}[H]
