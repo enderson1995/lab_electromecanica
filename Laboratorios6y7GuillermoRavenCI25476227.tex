@@ -513,10 +513,17 @@ Con los datos obtenidos en el cuadro \ref{MedCurvaCarga}, se hallo la curva pres
  Para determinar el porcentaje de regulación de velocidad de toman los datos de velocidad del Cuadro \ref{Cuadro:Medicion porcentaje de regulacion} a través de la siguiente formula:
  \begin{eqnarray}
   PRN_{\%} =100\%*\frac{n_{sc}-n_{pc}}{n_{pc}}; 
-  & \Delta PNR = \frac{1 }{n_{pc}}\cdot \Delta n_{sc}+\frac{n_{sc} }{n_{pc}^2}\cdot \Delta n_{pc}
+  & \Delta PNR = \frac{1 }{n_{pc}}\cdot \Delta n_{sc}-\frac{n_{sc} }{n_{pc}^2}\cdot \Delta n_{pc}
  \end{eqnarray}
  
-Logrando obtener que el porcentaje de regulación de velocidad es de $8,55 \pm 0,43 \%$
+Logrando obtener que el porcentaje de regulación de velocidad es de $8,56 \pm 0,0179 \%$
+
+	\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{./recursos-Lab6/curvaParCorrienteDeArmadura.png}
+	\caption{Curva de par en función de la corriente de armadura}
+	\label{fig:CurvaDeVelocidadCorriente}
+\end{figure}
 \section{Analísis de resultados}
 Al comparar los valores de resistencias es notable que la de mayor valor es la referente a la resistencia de campo, siendo el de menor valor la resistencia referente a la de armadura, el valor obtenido de las escobillas según el IEC 34-2 e IEEE std 113-1985 corresponden al tipo metal-grafito, en la Figura \ref{fig:modObtenido} se aprecia el modelo en campo y armadura construidos a partir de lo obtenido.\\
 
