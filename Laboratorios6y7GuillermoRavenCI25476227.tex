@@ -489,15 +489,48 @@ Con los datos obtenidos en el cuadro \ref{MedCurvaCarga}, se hallo la curva pres
 			28,2+-0,1 & 968+-2 & 2200 & 18,8 +- 0,067&20.3+-0.186\\ \hline
 		\end{tabular}
 	\end{table}
-	
+	\begin{itemize}
+		\item \textbf{Predeterminar curva N=f(Ia)}
+	\end{itemize}
+	Para predeterminar la curva de velocidad con respecto a la corriente de armadura con $I_{ext}$ y $V_{T}$ constante se tiene la siguiente ecuación:
+	\begin{equation}
+		Ea= V_T - I_a * R_a = K \Phi n = K \Phi \frac{2 \pi}{60} W= AW 
+	\end{equation}
+	En vacío se asumen las condiciones Ea = Vt =115, Ia=0 y W= 1000 rpm con lo que se ontiene:
+	\begin{equation}
+		A=\frac{Ea}{W}= \frac{115}{1000}=0,115
+	\end{equation}
+	Con el valor de Ra previamente calculado es decir Ra= 0,2936 y la siguiente ecuación se predetermina la curva:
+	\begin{equation}
+		W=\frac{V_T - I_a * R_a}{A}
+		\label{ec.Velocidad corriente}
+	\end{equation}
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.8]{./recursos-Lab6/curvaPredeterminarVelocidadCorrienteArmadura.png}
+		\caption{Curva teorica de velocidad en función de la corriente de armadura}
+		\label{fig:CurvaPredeterminarVelocidadCorrienteArmadura}
+	\end{figure}
+	\begin{itemize}
+		\item \textbf{Determinar curva N=f(Ia) a través de los datos obtenidos}
+	\end{itemize}
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.8]{./recursos-Lab6/curvaVelocidadCorriente.png}
-		\caption{Curvas Velocidad en función de la corriente}
+		\caption{Curva a través de datos experimentales velocidad en función de la corriente de armadura}
 		\label{fig:CurvaDeVelocidadCorriente}
 	\end{figure}
 
-	
+	\begin{itemize}
+		\item \textbf{Predeterminar porcentaje de regulación de velocidad}
+	\end{itemize}
+		De la ecuación \ref{ec.Velocidad corriente} se planteal se siguiente ecuación con Ia a plena carga de 26A
+		\begin{equation}
+			\% PNR = \frac{W-{sc} - W {pc}}{W_{pc}} \cdot 100 \% = 5.47 \%
+		\end{equation}
+	\begin{itemize}
+		\item \textbf{Determinar porcentaje de regulación de velocidad a través de datos experimentales}
+	\end{itemize}
 	\begin{table}[H]
 		\centering
 		\caption{Mediciones de porcentaje de regulación}
