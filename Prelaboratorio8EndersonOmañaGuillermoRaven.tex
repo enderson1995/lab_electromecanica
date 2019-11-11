@@ -49,7 +49,7 @@
 
 
 \author{\\Omaña Enderson CI:  24.757.361 \\Raven Guillermo CI: 25.476.227\\Profesor: Crespo Jorge \vspace*{1in}}
-\title{Universidad Central de Venezuela\\{ Facultad de Ingeniería\\Escuela de Ingeniería Eléctrica\\ Conversión Electromecánica de la energía\\\vspace*{1.5in} }Pre laboratorio 8\\MAQUINAS ASINCRÓNICAS O DE INDUCCIÓN\vspace*{1.35in}}
+\title{Universidad Central de Venezuela\\{ Facultad de Ingeniería\\Escuela de Ingeniería Eléctrica\\ Conversión Electromecánica de la energía\\\vspace*{1.5in} }Laboratorio 8\\MAQUINAS ASINCRÓNICAS O DE INDUCCIÓN\vspace*{1.35in}}
 \date{Caracas, \today}
 
 \begin{document}	% Inicio del documento
@@ -85,7 +85,7 @@ Estos son los pasos a seguir del método:
 	Se toman como valores iniciales los valores obtenidos en las pruebas de vacío y rotor trabado de modo que quedarían las siguientes expresiones:
 	\begin{align}
 		X_{1_{(0)}} = \frac{\sqrt{\left(\frac{V_{1,cc}}{I_{1,cc}}\right)^{2}-\left(\frac{P_{1,cc}}{I_{1,cc}^{2}}\right)^{2}}}{1+\frac{X_{2}}{X_{1}}}\label{X10equ}\\
-		X_{m_{(0)}} = \left\|\frac{V_{1,0}}{I_{1,0}}-(R_{1}+jX_{1,(i)})\right\| \label{Xm0equ}
+		X_{m_{(0)}} = \left\|\frac{\overline{V_{1,0}}}{\overline{I_{1,0}}}-(R_{1}+jX_{1,(i)})\right\| \label{Xm0equ}
 	\end{align}
 	\item Calcular $Q_{1,0}$ y $Q_{1,cc}$ respectivamente mediante:
 	\begin{align}
@@ -116,7 +116,7 @@ Estos son los pasos a seguir del método:
 	\item Determinar gráficamente y a partir de las mediciones realizadas el valor de las perdidas mecánicas $P_{mec}$.
 	\item Calcular $P_{fe}$:
 	\begin{equation}
-		P_{fe} = P_{1,0}-\frac{P_{mec}}{3}-I_{1,0}^{2}\cdot R_{1}
+		P_{fe} = P_{1,0}-\frac{P_{mec}}{3}-I_{1,0}^{2}\cdot R_{1} \label{Pfe}
 	\end{equation}
 	\item Calcular $g_{fe}$:
 	\begin{equation}
@@ -124,11 +124,11 @@ Estos son los pasos a seguir del método:
 	\end{equation} 
 	\item Calcular $R_{fe}$:
 	\begin{equation}
-	R_{fe} = \frac{1}{g_{fe}}
+	R_{fe} = \frac{1}{g_{fe}} \label{Rfe}
 	\end{equation}
 	\item Calcular $R_{2}$:
 	\begin{equation}
-		R_{2} = \left(\frac{P_{cc}}{I_{1,cc}^{2}}-R_{1}\right)\left(1+\frac{X_{2}}{X_{m,(i+1)}}\right)^{2}-\frac{X_{2}^{2}}{X_{1,(i+1)}^{2}}\cdot X_{1,cc,(i)}^{2}\cdot g_{fe}
+		R_{2} = \left(\frac{P_{cc}}{I_{1,cc}^{2}}-R_{1}\right)\left(1+\frac{X_{2}}{X_{m,(i+1)}}\right)^{2}-\frac{X_{2}^{2}}{X_{1,(i+1)}^{2}}\cdot X_{1,cc,(i)}^{2}\cdot g_{fe} \label{R2equ}
 	\end{equation}
 \end{enumerate}
 
@@ -196,7 +196,7 @@ Estas son las precauciones y normativas necesarias para realizar el laboratorio 
    
     Es recomendable que los vatímetros posean un factor de potencia bajo.
     \item \textbf{Respecto a la medición de resistencia estatórica:} Se trabajara asegurándose que la corriente máxima alcanzada sea menor o igual al 10 \% de la corriente nominal. La resistencia obtenida deberá ajustarse de acuerdo a la temperatura.
-    \item \textbf{Respecto a la prueba de rotor trabado:} Se debe tener especial cuidado en las cercanías de la carga completa, debido a las corrientes que se pueden alcanzar, por este motivo se trabajara a tensión reducida con un vatímetro preferiblemente de alto factor de potencia, se recomienda registrar  la temperatura del devanado del estátor o la resistencia del devanado del estátor.
+    \item \textbf{Respecto a la prueba de rotor trabado:} Se debe tener especial cuidado en las cercanías de la carga completa, debido a las corrientes que se pueden alcanzar, por este motivo se trabajara a tensión reducida con un vatímetro preferiblemente de alto factor de potencia, se recomienda registrar  la temperatura del devanado del estátor o la resistencia del devanado del mismo.
     
     Se debe tener cuidado de no sobre calentar los devanados. Tomando las lecturas más altas primero y las lecturas más bajas en sucesión (Según IEEE Std 112-2004). Ayudará a igualar la temperatura.
     \item \textbf{Respecto a la medición de la curva de carga:} Se debe medir a velocidad constante.
@@ -212,9 +212,9 @@ Estas son las precauciones y normativas necesarias para realizar el laboratorio 
 \section{Procedimiento}
 \subsection{Medición de resistencia estatórica}
 \begin{enumerate}
-	\item Lo primero sera, hallar las resistencias internas por fase, por lo que se realizaran las conexiones como en la Figura \ref{fig:diagMedResEstatorica}.
-	\item Se alimentara las fases del estátor con tensión DC a una fracción de la tensión nominal.
-	\item Manteniendo la tensión fija, se irán cambiando la resistencia del reostato de 100 $\Omega$, se tomara nota de los valores de tensión y corriente (en caso de ser muy elevada la corriente, se colocara una resistencia de shunt para realizar la medición) en cada fase. Se tomaran al menos 4 mediciones por cada fase.
+	\item Lo primero sera, hallar las resistencias internas por fase, por lo que se realizaran las conexiones como en la Figura \ref{fig:modeloConexionResistencias}.
+	\item Se alimentaran las fases del estátor con tensión DC a una fracción de la tensión nominal.
+	\item Manteniendo la tensión fija, se irá ajustando el variac, se tomara nota de los valores de tensión y corriente (en caso de ser muy elevada la corriente, se colocara una resistencia de shunt para realizar la medición) en cada fase. Se tomaran al menos 4 mediciones por cada fase.
 	\item Se verificara si la conexión del estátor se encuentra en delta o en estrella, ya que de ser delta la resistencia por fase sera:
 	\begin{equation}
 	R_{fase} = \frac{V_{DC_{\phi}}}{2\cdot I_{DC_{\phi}}}
@@ -227,21 +227,21 @@ Estas son las precauciones y normativas necesarias para realizar el laboratorio 
 \end{enumerate}
 \subsection{Prueba en vacío con rotor cortocircuitado}
 \begin{enumerate}
-	\item Se armara el circuito presente en la Figura \ref{fig:modeloConexionResistencias}, es importante denotar que para cada medición se tomara nota de la tensión  de linea, corriente de linea y potencia.
+	\item Se armara el circuito presente en la Figura \ref{fig:diagramaDeConexion}, sin conectar carga alguna. Es importante denotar que para cada medición se tomara nota de la tensión  de linea, corriente de linea y potencia.
 	\item Se iniciaran las mediciones desde donde rompa la inercia inicial el motor hasta la tensión nominal y se ira bajando en pasos equidistantes hasta que la corriente en vez de bajar comience a subir.
 \end{enumerate}
 \subsection{Prueba de rotor trabado}
 \begin{enumerate}
-	\item Se armara el circuito presente en la Figura \ref{fig:diagramaDeConexion}, es importante denotar que para cada medición se tomara nota de la tensión  de linea, corriente de linea y potencia.
+	\item Se trabara mecánicamente el motor. Es importante denotar que para cada medición se tomara nota de la tensión  de linea, corriente de linea y potencia.
 	\item Se realizara al menos una medición mientras el rotor se encuentra trabado, se espera que la corriente sea la nominal y la potencia activa.
 \end{enumerate}
 \subsection{Efecto de carga}
 \begin{enumerate}
-	\item Se armara el circuito presente en la Figura \ref{fig:diagramaDeConexion}, es importante denotar que para cada medición se tomara nota de la tensión  de linea, corriente de linea y potencia.
+	\item Al circuito de la Figura \ref{fig:diagramaDeConexion} se le conectara un generador sincronico y este se conectara a una carga con el fin de visualizar el efecto de carga. Es importante denotar que para cada medición se tomara nota de la tensión  de linea, corriente de linea y potencia.
 	\item Se medirán los parámetros para distintas cargas conectadas al generador DC alimentado por el motor AC (al menos 4).
 \end{enumerate}
 \section{Diagramas}
-(Lo haremos a mano y cuando le entreguemos el laboratorio los pasaremos a computadora)
+
 	\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.8]{./recursos-Lab8/modeloInternoMotorInduccion.png}
@@ -266,7 +266,7 @@ Estas son las precauciones y normativas necesarias para realizar el laboratorio 
 
 \section{Resultados}
 \subsection{Medición de resistencia interna}
-Para obtener el valor de R1 del Cuadro \ref{cuadro medicion de resistencia} se sacan los promedios de cada grupo de medidas:
+Para obtener el valor de R1 del Cuadro \ref{cuadro medicion de resistencia} se calculan los promedios de cada grupo de medidas:
 \begin{table}[H]
 	\centering
 	\caption{Resultados medición de resistencia}
@@ -333,7 +333,7 @@ Entonces: $R_{estatorica(ajustada)}$ = 0,775 $\pm$ 0,0269 $\Omega$, ya que la co
 		204$\pm$2 & 204$\pm$2 & 206$\pm$2 & 5,5$\pm$0,5 & 1020$\pm$10 & 240$\pm$10 \\ \hline
 	\end{tabular}
 \end{table}
-Con los valores de la tabla \ref{tabla:resultadosPruebasVacio} se realiza la curva de P3$\phi$ Vs $V_{\phi}^2$ cuyo corte con el eje nos da el valor de las perdidas mecanicas del rotor, para ello construimos el cuadro \ref{cuado: p3f y Vf} donde:
+Con los valores del cuadro \ref{tabla:resultadosPruebasVacio} se realiza la curva de $P_{3\phi}$ respecto a $V_{\phi}^2$ cuyo corte con el eje nos da el valor de las perdidas mecanicas del rotor, para ello construimos el cuadro \ref{cuado: p3f y Vf} donde:
 \begin{eqnarray}
 V_{\phi}=\frac{V_{L1}+V_{L2}+V_{L3}}{3\sqrt{3}}\\
 \Delta V_{\phi}= \bigg|\frac{\delta V_{\phi}}{V_{Li}}\bigg| \cdot \Delta V_{Li} = \frac{\Delta V_{L1}+\Delta V_{L2}+\Delta V_{L3}}{3 \sqrt{3}}
@@ -361,7 +361,7 @@ P_{total}=P_1+P_2\\
 	\end{tabular}
 \end{table}
 
-Para obtener el valor de P3$_\phi$ los vatímetros se encontraban restandose, empleando las ecuaciones \ref{desvEstandar} y \ref{incertiPendiente} con la regresión líneal se obtiene:
+Para obtener el valor de $P_{3\phi}$ los vatímetros se encontraban restándose, empleando las ecuaciones \ref{desvEstandar} y \ref{incertiPendiente} con la regresión lineal se obtiene:
 
 \begin{figure}[H]
 	\centering
@@ -370,23 +370,100 @@ Para obtener el valor de P3$_\phi$ los vatímetros se encontraban restandose, em
 	\label{fig:curvaPotenciaTensionCuadrado}
 \end{figure}
 
-El corte con el eje el cual representa las pérdidas mecanicas valen $P_m=46,30\pm 0,1078$
+El corte con el eje el cual representa las pérdidas mecánicas valen $P_m=46,30\pm 0,11$ W.
 \subsection{Prueba de rotor trabado}
-Al hacer la prueba de motor trabado se obtuvo el cuadro \ref{cuadro prueba de rotor trabado}, pormedición indirecta al plantear las siguientes ecuaciones obtenemos:
+Por medición indirecta al plantear las siguientes ecuaciones obtenemos:
 \begin{eqnarray}
 V_{\phi}=\frac{V_L}{\sqrt{3}}\\
 \Delta V_{\phi}= \bigg|\frac{\delta V_{\phi}}{V_L}\bigg| \cdot \Delta V_L = \frac{\Delta V_L}{\sqrt{3}}
 \end{eqnarray}
 
+Utilizando lo calculado mediante la expresión previa y 
+los datos experimentales se armo el siguiente cuadro:
 \begin{table}[H]
 	\centering
-	\label{cuadro prueba de rotor trabado}
+	\label{rotorTrabado}
 	\caption{prueba de rotor trabado}
 	\begin{tabular}{|c|c|c|c|c|c|}
 		\hline
 		$V_L$[V]&$V_{\phi}[V]$& $I_{\phi}[A]$ & $P_1$[W]&$P_2$[W]&$P_{total}$[W]\\ \hline
-		41$\pm$1& 23,67$\pm$0,57&2,5$\pm$0,1&90$\pm$5&5$\pm$5& 95$\pm$10\\ \hline
+		41$\pm$1& 23,67$\pm$0,57&12,5$\pm$0,5&90$\pm$5&5$\pm$5& 95$\pm$10\\ \hline
 	\end{tabular}
 \end{table}
-En la Figura \ref{fig:modeloMotorInduccion}
+Cabe destacar que la corriente fue medida luego de pasar por un transformador de corriente.
+\subsection{Método A}
+\subsubsection{Paso 1}
+De acuerdo a las mediciones previas los parámetros iniciales son los siguientes:
+\begin{itemize}
+	\item $V_{1,0}$: corresponde con el ultimo valor del cuadro \ref{cuado: p3f y Vf}, sería (118 $\pm$ 1,14) V.
+	\item $I_{1,0}$: corresponde con el ultimo valor del cuadro \ref{tabla:resultadosPruebasVacio}, sería (5,5 $\pm$ 0,5) A.
+	\item $P_{1,0}$: corresponde con el ultimo valor del cuadro \ref{cuado: p3f y Vf} entre 3, sería (420 $\pm$ 20) W.
+	\item $V_{1,cc}$:  (23,67 $\pm$ 0,57) V.
+	\item $I_{1,cc}$: (12,5 $\pm$ 0,5) A.
+	\item $P_{1,cc}$: (31,66 $\pm$ 10) W.
+\end{itemize}
+\subsubsection{Paso 2}
+Se asumirá un diseño de NEMA A ó D, por lo tanto $X_{1}$/$X_{2}$ = 1.
+\subsubsection{Paso 3}
+Empleando las ecuaciones \ref{X10equ} y \ref{Xm0equ} se tiene que:
+\begin{itemize}
+	\item $	X_{1_{(0)}} = 0,9414$ $\Omega$ .
+	\item $X_{m_{(0)}} =21,7353$ $\Omega$ .
+\end{itemize}
+\subsubsection{Paso 4}
+Con las ecuaciones \ref{Q10equ} y \ref{Q1ccequ} se obtiene:
+\begin{itemize}
+	\item $	Q_{1,0} = 494,7737 $ W.
+	\item $Q_{1,cc} = 294,1762$ W.
+\end{itemize}
+\subsubsection{Pasos 5,6,7 y 8}
+Aplicando el metodo mediante un algoritmo hecho en matlab se obtiene lo siguiente:
+\begin{table}[H]
+	\centering
+	\caption{Pasos 5, 6, 7 y 8 (Resultados)}
+	\label{MetodoAItera}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\textbf{i} & \textbf{X\_\{m\} {[}$\Omega${]}} & \textbf{X\_\{1\} {[}$\Omega${]}} & \textbf{$|X_{m,(i+1)}-X_{m,(i)}|$} & \textbf{$|X_{1,(i+1)}-X_{1,(i)}|$} \\ \hline
+		0          & 21,7353                          & 0,9414                           & -                                  & -                                  \\ \hline
+		1          & 27,4330                          & 0,9613                           & 5,6978                             & 0,02                               \\ \hline
+		2          & 27,9092                          & 0,9576                           & 0,4762                             & 0,0037                             \\ \hline
+		3          & 27,9419                          & 0,9572                           & 0,0327                             & 0,0003                             \\ \hline
+		4          & 27,9441                          & 0,9572                           & 0,0022                             & 0                                  \\ \hline
+		5          & 27,9443                          & 0,9572                           & 0,0001                             & 0                                  \\ \hline
+	\end{tabular}
+\end{table}
+
+De acuerdo con el cuadro previo $X_{m}$ es 27,9443 $\Omega$ y $X_{1}$ 0,9572 $\Omega$ .
+\subsubsection{Paso 9}
+Dado que que $X_{2}$ = $X_{1}$ entonces este sera 0,9572 $\Omega$.
+\subsubsection{Paso 10}
+Este paso se realizo previamente y se obtuvo que las $P_{mec}$ son (46,30 $\pm$ 0,11) W.
+\subsubsection{Paso 11}
+Aplicando la ecuación \ref{Pfe} se tiene que $P_{fe}$ = 392,8448 W.
+\subsubsection{Paso 12}
+Aplicando la ecuación \ref{gfeequ} se tiene que $g_{fe}$ = 0,0302 $\Omega^{-1}$.
+\subsubsection{Paso 13}
+Aplicando la ecuación \ref{Rfe} se tiene que $R_{fe}$ = 33,1351 $\Omega$.
+\subsubsection{Paso 14}
+Aplicando la ecuación \ref{R2equ} se tiene que $R_{2}$ = 0,2081 $\Omega$.
+\section{Modelo obtenido} 
+\newpage
+\section{Análisis de resultados}
+Se comprueba que efectivamente la reactancia por los flujos dispersos es mucho más grande que las reactancias en los arrollados, además la resistencia en el núcleo es al menos 30 veces la estatórica sumada a la resistencia en el rotor, de modo que las perdidas en el núcleo son mayores a las perdidas en cortocircuito en un factor entre 3 y 4 veces. Por estos motivos no es de extrañar que la maquina en vació posee mayores perdidas que a motor trabado, ya que en vació prácticamente la mayoría de las perdidas se deben al núcleo, debido a que las perdidas en el cobre del estátor son realmente mínimas. Mientras que en cortocircuito las perdidas del núcleo son ignoradas debido a la mínima corriente que circula por el mismo.
+\newpage
+\section{Conclusión}
+El caracterizar una maquina asincrónica es sencillo a nivel experimental, pero para calcular los parámetros, a menos que se posea el algoritmo completo de alguno de los métodos de calculo de parámetros, puede volverse una tarea larga incluso el programar dicho algoritmo en algún software de calculo, ya que la cantidad de ecuaciones que maneja el método es considerable. El método A no es algo que sea recomendable para realizar a mano ya que la probabilidad de equivocarse en alguna cuenta es realmente elevada, por este motivo se recomienda realizar una función u algún programa que ejecute todos los pasos necesarios para obtener los resultados deseados.
+\newpage
+\section{Anexos}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.55]{./recursos-Lab8/HojaDeDatos1.jpeg}
+	\caption{Hoja de datos 1}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{./recursos-Lab8/HojaDeDatos2.jpeg}
+	\caption{Hoja de datos 2}
+\end{figure}
 \end{document}
